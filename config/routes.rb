@@ -1,4 +1,86 @@
 Rails.application.routes.draw do
+  get 'public_cards/new'
+
+  get 'public_cards/edit'
+
+  get 'public_cards/show'
+
+  get 'public_cards/index'
+
+  get 'profiles/new'
+
+  get 'profiles/edit'
+
+  get 'profiles/show'
+
+  get 'profiles/index'
+
+  get 'private_cards/new'
+
+  get 'private_cards/edit'
+
+  get 'private_cards/show'
+
+  get 'private_cards/index'
+
+  get 'quizes/new'
+
+  get 'quizes/edit'
+
+  get 'quizes/show'
+
+  get 'quizes/index'
+
+  get 'questions/new'
+
+  get 'questions/edit'
+
+  get 'questions/show'
+
+  get 'questions/index'
+
+  get 'public/Cards'
+
+  get 'public/new'
+
+  get 'public/edit'
+
+  get 'public/show'
+
+  get 'public/index'
+
+  get 'profile/new'
+
+  get 'profile/edit'
+
+  get 'profile/show'
+
+  get 'profile/index'
+
+  get 'private_card/new'
+
+  get 'private_card/edit'
+
+  get 'private_card/show'
+
+  get 'private_card/index'
+
+  get 'levels/new'
+
+  get 'levels/edit'
+
+  get 'levels/show'
+
+  get 'levels/index'
+
+  get 'cards/new'
+
+  get 'cards/edit'
+
+  get 'cards/show'
+
+  get 'cards/index'
+
   devise_for :users, controllers: { registrations: 'users/registrations', passwords: 'users/passwords' }
 
   devise_for :admins

@@ -1,0 +1,2 @@
+module PublicCardsHelper
+end
