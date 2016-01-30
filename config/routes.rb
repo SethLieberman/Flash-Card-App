@@ -1,91 +1,39 @@
 Rails.application.routes.draw do
-  get 'public_cards/new'
 
-  get 'public_cards/edit'
+  devise_for :users
 
-  get 'public_cards/show'
-
-  get 'public_cards/index'
-
-  get 'profiles/new'
-
-  get 'profiles/edit'
-
-  get 'profiles/show'
-
-  get 'profiles/index'
-
-  get 'private_cards/new'
-
-  get 'private_cards/edit'
-
-  get 'private_cards/show'
-
-  get 'private_cards/index'
-
-  get 'quizes/new'
-
-  get 'quizes/edit'
-
-  get 'quizes/show'
-
-  get 'quizes/index'
-
-  get 'questions/new'
-
-  get 'questions/edit'
-
-  get 'questions/show'
-
-  get 'questions/index'
-
-  get 'public/Cards'
-
-  get 'public/new'
-
-  get 'public/edit'
-
-  get 'public/show'
-
-  get 'public/index'
-
-  get 'profile/new'
-
-  get 'profile/edit'
-
-  get 'profile/show'
-
-  get 'profile/index'
-
-  get 'private_card/new'
-
-  get 'private_card/edit'
-
-  get 'private_card/show'
-
-  get 'private_card/index'
-
-  get 'levels/new'
-
-  get 'levels/edit'
-
-  get 'levels/show'
-
-  get 'levels/index'
-
-  get 'cards/new'
-
-  get 'cards/edit'
-
-  get 'cards/show'
-
-  get 'cards/index'
-
-  devise_for :users, controllers: { registrations: 'users/registrations', passwords: 'users/passwords' }
-
+  #this defines the scope for devise with users
+  #if logged in, will root to users index
+  #write some actions to say if not logged in go to log in or signup page
+  #still have to figure out how to have root of site go to landing page.
+  #basically the root to is what devise looks to go after signining in or up.
+  devise_scope :user do
+    root to: "users#index"
+  end
+  # devise_scope :user do
+  #  get "signup", to: "devise/registrations#new"
+  #  get "login", to: "devise/sessions#new"
+  #  get "logout", to: "devise/sessions#destroy"
+  # end
   devise_for :admins
 
-  root "devise/sessions#new"
+  #restful routing for all other controllers that don't require devise
+
+  #we need this one so we can control what is shown for the users, using devise helpers 
+  #(these views are not devise generated)
+  resources :users
+
+  resources :cards
+  resources :levels
+  resources :private_cards
+  resources :public_cards
+  resources :questions
+  resources :quizzes
+
+  #root page is the sign in page for a user
+
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
