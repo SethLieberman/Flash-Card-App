@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+Card.create([
+	{question:"What does HTML stand for", answer:"Hypertext Markup Language"},
+	{question:"What is <>", answer:"Carrot"}
+	])

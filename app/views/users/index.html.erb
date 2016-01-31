@@ -2,3 +2,9 @@
 <p>Find me in app/views/users/index.html.erb</p>
 
 <h1>HELLO</h1>
+
+
+<% @cards.each do |card| %>
+
+<%= content_tag :p, "Question:#{card.question}? Answer: #{card.answer}", class: "" %>
+<% end %>
