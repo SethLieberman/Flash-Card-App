@@ -18,5 +18,7 @@ User.create([
 
 Admin.create([
 	{email:"richard@richard.com", password: "12345678"}
+	{email:"skwildcat7@gmail.com", password: "12345678"},
+	Admin.skip_confirmation!
 	])
 
