@@ -25,12 +25,12 @@
   </li>
 <% end %>
 
-
-
 <%= content_tag :div, id: "users" do %>
 <%= render "users", users: @users %>
 <% end %>
 
-<%= content_tag :div, id: "admin" do %>
-<%= render "cards_admin_crud", cards: @cards %>
+<% if admin_signed_in? %>
+	<%= content_tag :div, id: "admin" do %>
+	<%= render "cards_admin_crud", cards: @cards %>
+	<% end %>
 <% end %>
