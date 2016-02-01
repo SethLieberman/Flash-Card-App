@@ -1,28 +1,31 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations',
+    passwords: 'users/passwords'
+  }
+  
+
+  devise_for :admins, controllers: {
+    sessions: 'admins/sessions',
+    registrations: 'admins/registrations',
+    passwords: 'admins/passwords',
+    confirmations: 'admins/confirmations',
+    unlocks: 'admins/unlocks'
+  }
+  
 
   #this defines the scope for devise with users
   #if logged in, will root to users index
   #write some actions to say if not logged in go to log in or signup page
   #still have to figure out how to have root of site go to landing page.
   #basically the root to is what devise looks to go after signining in or up.
-  devise_scope :user do
-    root to: "users#index"
+  devise_scope :users do
+    root to: "users/sessions#new"
   end
-  # devise_scope :user do
-  #  get "signup", to: "devise/registrations#new"
-  #  get "login", to: "devise/sessions#new"
-  #  get "logout", to: "devise/sessions#destroy"
-  # end
-  devise_for :admins
 
   #restful routing for all other controllers that don't require devise
-
-  #we need this one so we can control what is shown for the users, using devise helpers 
-  #(these views are not devise generated)
-  resources :users
-
   resources :cards
   resources :levels
   resources :private_cards
