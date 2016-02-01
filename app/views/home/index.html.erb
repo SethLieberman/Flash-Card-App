@@ -1,4 +1,12 @@
-<h1>Home#index</h1>
+<!-- if user admin is logged in display admin's page -->
+<% if admin_signed_in? %>
+<h1>Admin's Home</h1>
+<% end %>
+
+<!-- if user is signed in display users page -->
+<% if user_signed_in? %>
+<h1>Home Page</h1>
+<% end %>
 <p>Find me in app/views/home/index.html.erb</p>
 
 <!-- Log in button hidden if user signed in -->
