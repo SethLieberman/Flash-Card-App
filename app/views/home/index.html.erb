@@ -36,7 +36,12 @@
 	<%= render "cards", cards: @cards %>
 	<% end %>
 
+	<%= content_tag :div, class: "privateCard" do %>
+	<%= render "private_cards", cards: @cards %>
+	<% end %>
+
 <% end %>
+
 
 <% if admin_signed_in? %>
 
