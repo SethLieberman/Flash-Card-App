@@ -1,0 +1,18 @@
+<%= content_tag :h1, "Users" %>
+
+<% users.each do |user| %>
+
+<%= content_tag :div do %>
+<%= content_tag :p, "Email: #{user.email}", class: "info-display" %>
+
+	<%= link_to "Delete", user_path(user.id), method: :delete, remote: :true, class: "delete-element" %>
+
+		<%= content_tag :span, class: "edit" do %>
+			<%= content_tag :h5, "Edit", class: "edit-button"%>
+			<%= form_for user, remote: true, html: {method: :patch}, html: {class: "edit-element"} do |u| %>
+				<%= u.text_field :email, placeholder: "Email" %>
+				<%= u.submit :Edit %>
+			<% end %>
+		<% end %>
+	<% end %>
+<% end %>
