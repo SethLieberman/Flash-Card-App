@@ -42,6 +42,10 @@
 
 <% if admin_signed_in? %>
 	<%= content_tag :div, id: "admin" do %>
-	<%= render "quizzes_admin_crud", quizzes: @quizzes %>
+	<%= render "quizzes_admin_crud", quiz: @quiz %>
+	<% end %>
+
+	<%= content_tag :div, id: "admin" do %>
+	<%= render "new_quiz_admin", quiz: @quiz %>
 	<% end %>
 <% end %>
