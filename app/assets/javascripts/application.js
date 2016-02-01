@@ -23,10 +23,9 @@ $(document).on('page:update', function(){
 		$(e.currentTarget).parent().hide();
 	});
 
+	// this is hiding the answer
 	$(".answer").hide();
-	alert('hello');
-
-
+	// this will toggle the anwer when you click on the questions
 	$(".question").click(function(e){
 		$(".answer").toggle();
 
