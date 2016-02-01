@@ -5,6 +5,8 @@ class PublicCardsController < ApplicationController
     @publicCard = PublicCard.new
     #create the card
     @publicCard = PublicCard.create(public_card_params)
+    #update the newly created card with the current user who created it
+    PublicCard.last.update(user_id: current_user.id)
     #redirections if card was saved or not along with flash messaging
     if @publicCard.save
       flash[:notice] = "Public card was created"

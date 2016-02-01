@@ -1,7 +1,7 @@
-<h1>PublicCards#edit</h1>
-<p>Find me in app/views/public_cards/edit.html.erb</p>
+<h2>Create a new public card</h2>
+<p>This card will be visible to everyone!</p>
 
-<h2>Edit this card</h2>
+<!-- for for creating a new public card -->
 <%= form_for @publicCard do |c| %>
 	<%= c.label :Question %>
 	<%= c.text_field :question %>
@@ -9,5 +9,5 @@
 	<%= c.text_field :answer %>
 	<%= c.label :Tag %>
 	<%= c.text_field :tag %>
-	<%= c.submit :Update %>
+	<%= c.submit :Create %>
 <% end %>

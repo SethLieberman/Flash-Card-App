@@ -23,29 +23,40 @@
   <li>
   <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
   </li>
-<% end %>
 
-<%= content_tag :div, id: "users" do %>
-<%= render "users", users: @users %>
+  	<%= content_tag :div, class: "publicCard" do %>
+	<%= render "public_card_crud", cards: @cards %>
+	<% end %>
+
+	<%= content_tag :div, class: "publicCard" do %>
+	<%= render "create_public_card", cards: @cards %>
+	<% end %>
+
+	<%= content_tag :div, class: "cards" do %>
+	<%= render "cards", cards: @cards %>
+	<% end %>
+
 <% end %>
 
 <% if admin_signed_in? %>
-	<%= content_tag :div, id: "admin" do %>
+
+	<%= content_tag :div, class: "users" do %>
+	<%= render "users", users: @users %>
+	<% end %>
+
+	<%= content_tag :div, class: "cards" do %>
 	<%= render "cards_admin_crud", cards: @cards %>
 	<% end %>
 
-	<%= content_tag :div, id: "admin" do %>
+	<%= content_tag :div, class: "new-card" do %>
 	<%= render "new_card_admin", card: @card %>
 	<% end %>
 
-<% end %>
-
-<% if admin_signed_in? %>
-	<%= content_tag :div, id: "admin" do %>
+	<%= content_tag :div, class: "quizzes" do %>
 	<%= render "quizzes_admin_crud", quiz: @quiz %>
 	<% end %>
 
-	<%= content_tag :div, id: "admin" do %>
+	<%= content_tag :div, class: "new-quiz" do %>
 	<%= render "new_quiz_admin", quiz: @quiz %>
 	<% end %>
 <% end %>

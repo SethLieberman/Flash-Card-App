@@ -30,7 +30,9 @@ User.create([
 
 PublicCard.create([
 	{question:"What does AJAX stand for?", answer:"Asynchronous JavaScript as XML", tag: "AJAX", user_id: 1},
-	{question:"How to you escape IRB to execute a command in Bash?", answer:"Use back ticks `` ", tag: "bash", user_id: 1}
+	{question:"How to you escape IRB to execute a command in Bash?", answer:"Use back ticks `` ", tag: "bash", user_id: 1},
+	{question:"Blah Blha", answer:"Asynchronous JavaScript as XML", tag: "AJAX", user_id: 2},
+	{question:"What does AJAwqfqfr?", answer:"Asynchrqwft as XML", tag: "AJAX", user_id: 3}
 	])
 
 
