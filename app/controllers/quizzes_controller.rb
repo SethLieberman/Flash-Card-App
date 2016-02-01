@@ -40,8 +40,9 @@ class QuizzesController < ApplicationController
 	#strong params
 	private 
 
-	#require the params of card and permit both question and answer to be written in DB
+	#require the params of quiz
 	def quiz_params 
     params.require(:quiz).permit(:question, :answer)
   end
+   
 end
