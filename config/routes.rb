@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   devise_scope :admin do
     get "login_admin", to: "admins/sessions#new"
     delete 'admins/user/:id' => 'admins/registrations#destroy_user', :as => :admin_destroy_user
+    get 'admins/user/:id' => 'admins/registrations#edit_user', :as => :admin_edit_user
     resources :users
   end
 

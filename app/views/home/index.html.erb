@@ -19,23 +19,23 @@
 <a href="login_admin">Log in Admin</a>
 <% end %>
 
-<% if user_signed_in? || admin_signed_in? %>
-  <li>
-  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
-  </li>
-<% end %>
-
-<%= content_tag :div, id: "users" do %>
-<%= render "users", users: @users %>
-<% end %>
-
-<% if admin_signed_in? %>
-	<%= content_tag :div, id: "admin" do %>
-	<%= render "cards_admin_crud", cards: @cards %>
+	<% if user_signed_in? || admin_signed_in? %>
+		<li>
+			<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+		</li>
 	<% end %>
 
+	<%= content_tag :div, id: "users" do %>
+		<%= render "users", users: @users %>
+	<% end %>
+
+	<% if admin_signed_in? %>
+		<%= content_tag :div, id: "admin" do %>
+		<%= render "cards_admin_crud", cards: @cards %>
+	<% end %>
+	
 	<%= content_tag :div, id: "admin" do %>
-	<%= render "new_card_admin", card: @card %>
+		<%= render "new_card_admin", card: @card %>
 	<% end %>
 
 <% end %>

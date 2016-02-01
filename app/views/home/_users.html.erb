@@ -3,7 +3,8 @@
 <% @users.each do |user| %>
 
 <%= content_tag :p, "User ID #{user.id}, Email: #{user.email}, Last signed in at #{user.last_sign_in_at}" %>
-<%= link_to "Delete User", admin_destroy_user_path(user), method: :delete, data: { confirm: "You sure?" }, class: "delete-element" %>
+<button><%= link_to "Edit User", admin_edit_user_path(user) %></button>
+<button><%= link_to "Delete User", admin_destroy_user_path(user), method: :delete, data: { confirm: "You sure?" }, class: "delete-element" %></button>
 
 <% end %>
 <% end %>
