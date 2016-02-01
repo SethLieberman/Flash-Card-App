@@ -5,7 +5,7 @@ class QuizzesController < ApplicationController
 
 	#for showing all quizes
 	def index
-		@quiz = Quiz.all
+		@quizzes = Quiz.all
 	end
 
 	#action for a new quiz for the view (quiz/new.html.erb)
@@ -50,6 +50,20 @@ class QuizzesController < ApplicationController
   			redirect_to root_path
   		end
   	end
+
+    def destroy
+    #assign @quiz to the current quiz
+    @quiz = Quiz.find(params[:id])
+    #if succesful display message
+      if @quiz.destroy
+        flash[:notice] = "Quiz was destroyed"
+        #redirect to quiz index
+        redirect_to root_path
+      else
+      flash[:alert] = "Something went wrong."
+      redirect_to root_path
+      end
+    end
 	
 	#strong params
 	private 
