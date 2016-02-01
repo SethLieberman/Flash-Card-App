@@ -14,3 +14,20 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+// When the page "upadates" this will allow us to delete users and cards
+$(document).on('page:update', function(){
+	$(".delete-element").on("ajax:complete", function(e){
+		console.log("clicked!");	
+		$(e.currentTarget).parent().hide();
+	});
+
+	// this is hiding the answer
+	$(".answer").hide();
+	// this will toggle the anwer when you click on the questions
+	$(".question").click(function(e){
+		$(".answer").toggle();
+
+	});
+});

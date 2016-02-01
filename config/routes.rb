@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   }
   
 
+
   #this defines the scope for devise with users
   #if logged in, will root to users index
   #write some actions to say if not logged in go to log in or signup page
@@ -25,10 +26,9 @@ Rails.application.routes.draw do
     root to: "users/sessions#new"
   end
 
-  devise_scope :admin do 
-    get "sign_in", to: "admins/sessions#new"
+  devise_scope :admin do
+    get "sing_in", to: "admins/sessions#new"
   end
-
 
   #restful routing for all other controllers that don't require devise
   resources :cards
