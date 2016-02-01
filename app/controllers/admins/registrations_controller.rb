@@ -1,6 +1,6 @@
 class Admins::RegistrationsController < Devise::RegistrationsController
-before_filter :configure_sign_up_params, only: [:create]
-before_filter :configure_account_update_params, only: [:update]
+  before_filter :configure_sign_up_params, only: [:create]
+  before_filter :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
   def new
@@ -25,6 +25,14 @@ before_filter :configure_account_update_params, only: [:update]
   # DELETE /resource
   def destroy
     super
+  end
+
+  def destroy_user
+    @user = User.find(params[:id])
+    puts "DESTROYING USER, HELLOOOOOO SETH!!!!!"
+    if @user.destroy
+      redirect_to root_url, notice: "User deleted."
+    end
   end
 
   # GET /resource/cancel
