@@ -31,10 +31,12 @@ class QuizzesController < ApplicationController
 
 	#for showing the currently selected quiz
   	def show
+  		@quiz = Quiz.find(params[:id])
   	end
 
 	#editing an already created quiz
   	def edit
+		@quiz = Quiz.find(params[:id])
   	end
 	
 	#strong params
