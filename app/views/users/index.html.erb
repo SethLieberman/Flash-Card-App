@@ -6,6 +6,6 @@
 <!-- this is displaying the questions and answers -->
 <% @cards.each do |card| %>
 
-<%= content_tag :p, "Question:#{card.question}?"%>
-<%= content_tag :p, "Answer: #{card.answer}", class: "" %>
+<%= content_tag :p, "Question:#{card.question}?", class: "question"%>
+<%= content_tag :p, "Answer: #{card.answer}", class: "answer" %>
 <% end %>
