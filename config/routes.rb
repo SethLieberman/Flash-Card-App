@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root "home#index"
+
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations',
@@ -15,19 +17,17 @@ Rails.application.routes.draw do
     unlocks: 'admins/unlocks'
   }
   
-
-
   #this defines the scope for devise with users
   #if logged in, will root to users index
   #write some actions to say if not logged in go to log in or signup page
   #still have to figure out how to have root of site go to landing page.
   #basically the root to is what devise looks to go after signining in or up.
   devise_scope :user do
-    root to: "users/sessions#new"
+    get "login", to: "users/sessions#new"
   end
 
   devise_scope :admin do
-    get "sing_in", to: "admins/sessions#new"
+    get "login_admin", to: "admins/sessions#new"
   end
 
   #restful routing for all other controllers that don't require devise

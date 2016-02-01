@@ -1,0 +1,12 @@
+<h1>Home#index</h1>
+<p>Find me in app/views/home/index.html.erb</p>
+
+<!-- Log in button hidden if user signed in -->
+<% unless user_signed_in? %>
+<a href="login">Log In User</a>
+<% end %>
+
+<!-- Log in button hidden if admin is signed in -->
+<% unless admin_signed_in? %>
+<a href="login_admin">Log in Admin</a>
+<% end %>
