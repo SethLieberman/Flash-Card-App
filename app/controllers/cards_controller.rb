@@ -63,7 +63,7 @@ class CardsController < ApplicationController
     @card = Card.find(params[:id])
     #if succesful display message
     if @card.destroy
-      flash[:notice] = "Card was destoryed"
+      flash[:notice] = "Card was destroyed"
       #redirect to cards index
       redirect_to cards_url
     else

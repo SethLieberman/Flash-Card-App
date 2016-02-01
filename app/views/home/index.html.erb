@@ -26,3 +26,6 @@
 <%= render "users", users: @users %>
 <% end %>
 
+<%= content_tag :div, id: "admin" do %>
+<%= render "cards_admin_crud", cards: @cards %>
+<% end %>

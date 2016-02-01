@@ -3,4 +3,5 @@ class HomeController < ApplicationController
   	@cards = Card.all
   	@users = User.all
   end
+  
 end
