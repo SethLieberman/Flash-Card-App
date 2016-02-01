@@ -19,6 +19,7 @@ Card.create([
 	{question:"a;kaewf;ajk", answer:"a;oweifha'owe", level_id: 5, admin_id: 1}
 	])
 
+
 User.create([
 	{email:"seth@seth.com", password: "12345678"},
 	{email:"jim@jim.com", password: "12345678"},
@@ -27,8 +28,10 @@ User.create([
 	{email:"tina@tina.com", password: "12345678"}
 	])
 
-# Admin.create([
-# 	{email:"skwildcat7@gmail.com", password: "12345678"}
-# 	])
+PublicCard.create([
+	{question:"What does AJAX stand for?", answer:"Asynchronous JavaScript as XML", tag: "AJAX", user_id: 1},
+	{question:"How to you escape IRB to execute a command in Bash?", answer:"Use back ticks `` ", tag: "bash", user_id: 1}
+	])
+
 
 
