@@ -1,8 +1,9 @@
 #NYCDA Flash Cards
----
+
 ##A gamified study guide
 
 ###Purpose:
+
 This application aims to make the vast amount of information that the NYCDA teaches its students into a fun, gamified study guide
 ---
 NYCDA students have often said that they will learn a language or topic (i.e. Javascript) one week, but then have to do some serious re-reading of lecture material when the course comes back to that topic, owning to the nature of a fast-paced coding boot-camp. This app aims to make the material re-call much more fun and easier. Hopefully, the students will also learn more in the long run.
