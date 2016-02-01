@@ -15,3 +15,9 @@
 /log/*
 !/log/.keep
 /tmp
+
+#ignore the ENV var file
+.env
+
+#It is a good idea to add in the Procfile to ensure that Heroku does not receive a R11 – Bad Bind Error.
+Procfile

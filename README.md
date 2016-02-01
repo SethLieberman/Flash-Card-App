@@ -1,45 +1,42 @@
-Write a short style guide
+#NYCDA Flash Cards
 
-Use Devise
+##A gamified study guide
 
-Models:
+###Purpose:
 
-Users
-Admins
-Cards
-Profile
-Levels (?)
-Credibility
-Public Cards (user created, available to everyone inherit from cards)
-Private Cards (user created, inherit from cards) determine public via boolean
-Quizzes (at end of each level)
+This application aims to make the vast amount of information that the NYCDA teaches its students into a fun, gamified study guide
+---
+NYCDA students have often said that they will learn a language or topic (i.e. Javascript) one week, but then have to do some serious re-reading of lecture material when the course comes back to that topic, owning to the nature of a fast-paced coding boot-camp. This app aims to make the material re-call much more fun and easier. Hopefully, the students will also learn more in the long run.
 
+##Features:
 
-Controllers:
+* Makes use of Devise for authentication
+* An admin model, to control all aspects of the site and to verify user created content is correct
+* Flash cards organized into levels, that correspond with the NYCDA WDI curriculum
+* Sets of public flash cards, created by users who have completed all the levels
+* Quizzes to test knowledge
+* Possible feature: one on one timed challenges
+* Possible feature: auto-detect correct code snippet challenges as you type
 
-Sessions
-Users
-Admins
-Users
-Levels
-Public Cards
-Private Cards
+##Usage:
 
+###General:
+The user will sign up for an account, and be directed to their dashboard. The user can then start working through the first level of flash cards, roughly equivalent to the first week of the NYCDA WDI course. When the user feels they are ready, the can choose to take the level's quiz. If they pass with 80% or higher, then they may advanced. If not, they may take the quiz again. The quizzes are created randomly from a list of possible questions.
 
+###Public cards:
+Once the user has achieved all the levels, they may contribute to the public cards database. The idea is that if the user has extensive knowledge on a particular topic, they can create flash cards on that topic that others may view and study.
 
-features:
-Users can sign up for account, create private or public cards. only allowed to create public cards if you have finished all the levels
+* A possible extension of this is for user created quizzes and levels.
 
-Admins can create admins, can approve public cards, can create cards, can create/edit levels, delete users, create a user,  (on create, would need random key generated from other admin?)
+###Private cards:
+A user may create private cards at any time. These are for their own personal use, and are only viewable by the user who created them. An admin does not have access to private cards. They are for general note-taking and to fill in any gaps that the user feels the pre-loaded cards did not address.
 
-Basic game: go through the levels (which consist of cards), and level up each time you complete cards
+###Credibility:
+Credibility addresses the concern that a user may not know whether a fact stated on a public card should be considered legitimate or not. The user accrues credibility by completing each level. When the last level is complete, the user will have enough credibility to create public cards. If the card is upvoted, the user gain credibility. If the card is down voted, the user loses credibility. There is a margin for error built in after the last level is achieved, lest the user's first created card gets heavily down voted, and an admin can always adjust the credibility if there is an error.
 
-Credibility: you get a base credibility once you 
+###Future plans:
 
-Advanced game feature: code snippets that are auto-detected to be correct or false (i.e. change color to red)
+* Scalable to other NYCDA courses, such as iPhone app dev, the front-end night classes, and any future classes
+* Scalable to other coding boot camps
 
-Other advanced game feature: users can complete against each other simultaneously in a challenge mode
-
-Possible feature: speech recognitions
-
-Quizzes (don't reveal answers if answer is wrong, passing is 80%, pulls a certain amount from group of questions to slightly randomize quiz each time)
+####This application was created by Seth, Alan, and Richard.
