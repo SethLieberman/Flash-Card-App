@@ -6,5 +6,5 @@
 <%= content_tag :p, "Level: #{card.level_id}", class: "level_id" %>
 <!-- button and link to edit a card -->
 <button><%= link_to "Edit Card", edit_card_path(card) %></button>
-<button><%= link_to "Delete Card", card, :method => :delete, :data => {:confirm => "Are you Sure?"} %></button>
+<button><%= link_to "Delete Card", card_path(card), method: :delete, data: { confirm: "You sure?" } %></button>
 <% end %>
