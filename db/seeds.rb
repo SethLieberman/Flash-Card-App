@@ -12,5 +12,9 @@ Card.create([
 	{question:"What is <>", answer:"Carrot"}
 	])
 User.create([
-	{email:"seth@seth.com"}
+	{email:"seth@seth.com", password: "12345678"}
+	])
+
+Admin.create([
+	{email:"richard@richard.com", password: "12345678"}
 	])

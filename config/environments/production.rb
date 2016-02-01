@@ -14,6 +14,31 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
+  #for email sending. change 'yoursite' to the sitename on heroku
+  config.action_mailer.default_url_options = { :host => 'yoursite.herokuapp.com' }
+
+  #it's possible we may need this line if we run into this error: 
+  # ActionView::Template::Error: Missing host to link to! Please provide the 
+  # :host parameter, set default_url_options[:host], or set :only_path to true
+  # Rails.application.routes.default_url_options[:host] = 'yoursite.herokuapp.com'
+
+  #setting production email configs
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
+
+  #production email settings
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: ENV["GMAIL_DOMAIN"],
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: ENV["GMAIL_USERNAME"],
+    password: ENV["GMAIL_PASSWORD"]
+  }
+
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.
   # For large-scale production use, consider using a caching reverse proxy like
