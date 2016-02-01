@@ -2,12 +2,26 @@
 <p>Find me in app/views/home/index.html.erb</p>
 
 <!-- Log in button hidden if user signed in -->
-<% unless user_signed_in? %>
+<% unless user_signed_in? || admin_signed_in? %>
 <a href="login">Log In User</a>
 <% end %>
 
 <!-- Log in button hidden if admin is signed in -->
-<% unless admin_signed_in? %>
+<% unless admin_signed_in? || user_signed_in?  %>
 <a href="login_admin">Log in Admin</a>
+<% end %>
+
+<% if user_signed_in? || admin_signed_in? %>
+  <li>
+  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+  </li>
+<% end %>
+
+<% if user_signed_in? %>
+<% @cards.each do |card| %>
+
+<%= content_tag :p, "Question:#{card.question}?", class: "question"%>
+<%= content_tag :p, "Answer: #{card.answer}", class: "answer" %>
+<% end %>
 <% end %>
 
