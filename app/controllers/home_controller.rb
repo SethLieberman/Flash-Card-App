@@ -8,6 +8,9 @@ class HomeController < ApplicationController
   	#public cards
   	@publicCards = PublicCard.all
   	@publicCard = PublicCard.new
+    # private cards
+    @privateCards = PrivateCard.all
+    @privateCard = PrivateCard.new
   	#quizzes
   	@quizzes = Quiz.all
   	@quiz = Quiz.new

@@ -1,13 +1,67 @@
 class PrivateCardsController < ApplicationController
-  def new
+	# creating a new private card
+	def new
+		@privateCard = PrivateCard.new
+    #create the card
+    @privateCard = PrivateCard.create(private_card_params)
+    #update the newly created card with the current user who created it
+    PrivateCard.last.update(user_id: current_user.id)
+    #redirections if card was saved or not along with flash messaging
+    if @privateCard.save
+    	flash[:notice] = "Private card was created"
+      #redirect to the cards index page
+      redirect_to root_path
+  else
+  	flash[:alert] = "Something went wrong."
+  	redirect_to root_path
   end
+end
 
-  def edit
-  end
+def edit
+  #set @privateCard to the current card, which was linked from the cards index view
+  @privateCard = PrivateCard.find(params[:id])
+end
 
+  # for showing the card
   def show
+  	@privateCard = PrivateCard.find(params[:id])
   end
 
-  def index
+  def update
+  	@rivateCard = PrivateCard.find(params[:id])
+   #update the card with the submitted params
+   if @privateCard.update(private_card_params)
+    #if succesful display message
+    flash[:notice] = "Public card was updated"
+      #redirect to the that card's page
+      redirect_to root_path
+  else
+      #if something went wrong, redirect to that card's page
+      flash[:alert] = "Something went wrong."
+      redirect_to root_path
   end
+end
+
+def index
+end
+
+  #action for destroying a card
+def destroy
+    #assign @card to the current card
+    @privateCard = PrivateCard.find(params[:id])
+    #if succesful display message
+    if @privateCard.destroy
+    	flash[:notice] = "Card was destroyed"
+      #redirect to cards index
+      redirect_to root_path
+  else
+  	flash[:alert] = "Something went wrong."
+  	redirect_to root_path
+  end
+end
+
+   #require the params of card and permit both question and answer to be written in DB
+   def private_card_params 
+   	params.require(:private_card).permit(:question, :answer, :user_id, :tag)
+   end
 end

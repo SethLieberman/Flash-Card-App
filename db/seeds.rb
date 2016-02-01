@@ -35,5 +35,15 @@ PublicCard.create([
 	{question:"What does AJAwqfqfr?", answer:"Asynchrqwft as XML", tag: "AJAX", user_id: 3}
 	])
 
+PrivateCard.create([
+	{question:"What is a questions?", answer:"Dont Ask", tag: "random", user_id: 1},
+	{question:"Where am I?", answer:"Lost", tag: "random", user_id: 1},
+	{question:"Who are you?", answer:"Seth", tag: "random", user_id: 2},
+	{question:"Why is the sky blue?", answer:"Why Not", tag: "random", user_id: 2},
+	{question:"Sushi?", answer:"Yes Please", tag: "random", user_id: 3},
+	{question:"How did I get here?", answer:"Booze", tag: "random", user_id: 3},
+
+	])
+
 
 
