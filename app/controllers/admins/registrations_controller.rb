@@ -17,6 +17,13 @@ class Admins::RegistrationsController < Devise::RegistrationsController
     super
   end
 
+  def edit_user
+    puts "HELOOOOOOOOO SMETH"
+    id = params[:id]
+    
+    redirect_to root_url, notice: "SMETH"
+  end
+
   # PUT /resource
   def update
     super
@@ -29,7 +36,7 @@ class Admins::RegistrationsController < Devise::RegistrationsController
 
   def destroy_user
     @user = User.find(params[:id])
-    puts "DESTROYING USER, HELLOOOOOO SETH!!!!!"
+    puts "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$!!!!!"
     if @user.destroy
       redirect_to root_url, notice: "User deleted."
     end
