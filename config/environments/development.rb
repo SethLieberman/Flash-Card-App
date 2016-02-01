@@ -24,7 +24,7 @@ Rails.application.configure do
     enable_starttls_auto: true,
     user_name: ENV["GMAIL_USERNAME"],
     password: ENV["GMAIL_PASSWORD"],
-    :openss1_verify_mode => 'none'
+    :openssl_verify_mode  => 'none'
   }
 
   # Show full error reports and disable caching.

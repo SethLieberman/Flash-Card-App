@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   }
   
 
+
   #this defines the scope for devise with users
   #if logged in, will root to users index
   #write some actions to say if not logged in go to log in or signup page
