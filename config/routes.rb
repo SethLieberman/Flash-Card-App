@@ -7,7 +7,8 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     passwords: 'users/passwords'
   }
-  
+
+
 
   devise_for :admins, controllers: {
     sessions: 'admins/sessions',
@@ -16,7 +17,7 @@ Rails.application.routes.draw do
     confirmations: 'admins/confirmations',
     unlocks: 'admins/unlocks'
   }
-  
+
   #this defines the scope for devise with users
   #if logged in, will root to users index
   #write some actions to say if not logged in go to log in or signup page
@@ -28,6 +29,8 @@ Rails.application.routes.draw do
 
   devise_scope :admin do
     get "login_admin", to: "admins/sessions#new"
+    delete 'admins/user/:id' => 'admins/registrations#destroy_user', :as => :admin_destroy_user
+    resources :users
   end
 
   #restful routing for all other controllers that don't require devise

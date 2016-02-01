@@ -1,6 +1,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-before_filter :configure_sign_up_params, only: [:create]
-before_filter :configure_account_update_params, only: [:update]
+  before_filter :configure_sign_up_params, only: [:create]
+  before_filter :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
   def new
@@ -20,11 +20,21 @@ before_filter :configure_account_update_params, only: [:update]
   # PUT /resource
   def update
     super
+    if params[:user][:password].blank?
+      params[:user].delete(:password)
+      params[:user].delete(:password_confirmation)
+    end
   end
 
   # DELETE /resource
+  # When user deletes himself
   def destroy
     super
+    @user = User.find(params[:id])
+    puts "DESTROYING USER, HELLOOOOOO SETH!!!!!"
+    if @user.destroy
+      redirect_to root_url, notice: "User deleted."
+    end
   end
 
   # GET /resource/cancel

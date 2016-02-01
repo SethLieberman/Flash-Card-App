@@ -1,0 +1,7 @@
+<% if user_signed_in? %>
+<% @cards.each do |card| %>
+
+<%= content_tag :p, "Question:#{card.question}?", class: "question"%>
+<%= content_tag :p, "Answer: #{card.answer}", class: "answer" %>
+<% end %>
+<% end %>

@@ -21,9 +21,14 @@ Card.create([
 
 User.create([
 	{email:"seth@seth.com", password: "12345678"}
+	{email:"jim@jim.com", password: "12345678"}
+	{email:"bob@bob.com", password: "12345678"}
+	{email:"tom@tom.com", password: "12345678"}
+	{email:"tina@tina.com", password: "12345678"}
 	])
 
-Admin.create([
-	# {email:"skwildcat7@gmail.com", password: "12345678"}
-	])
+# Admin.create([
+# 	{email:"skwildcat7@gmail.com", password: "12345678"}
+# 	])
+
 

@@ -17,10 +17,12 @@
   </li>
 <% end %>
 
-<% if user_signed_in? %>
-<% @cards.each do |card| %>
+<%= content_tag :div, id: "cards" do %>
+<!-- this is the cards view _cards.html.erb -->
+<%= render "cards", cards: @cards %>
+<% end %>
 
-<%= content_tag :p, "Question:#{card.question}?", class: "question"%>
-<%= content_tag :p, "Answer: #{card.answer}", class: "answer" %>
+<%= content_tag :div, id: "users" do %>
+<%= render "users", users: @users %>
 <% end %>
-<% end %>
+
