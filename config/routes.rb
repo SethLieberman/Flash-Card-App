@@ -21,9 +21,14 @@ Rails.application.routes.draw do
   #write some actions to say if not logged in go to log in or signup page
   #still have to figure out how to have root of site go to landing page.
   #basically the root to is what devise looks to go after signining in or up.
-  devise_scope :users do
+  devise_scope :user do
     root to: "users/sessions#new"
   end
+
+  devise_scope :admin do 
+    get "sign_in", to: "admins/sessions#new"
+  end
+
 
   #restful routing for all other controllers that don't require devise
   resources :cards
