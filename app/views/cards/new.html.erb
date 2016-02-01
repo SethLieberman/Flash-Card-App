@@ -1,2 +1,15 @@
 <h1>Cards#new</h1>
 <p>Find me in app/views/cards/new.html.erb</p>
+
+<h2>Create a new card</h2>
+
+<!-- for for creating a new card -->
+<%= form_for @card do |c| %>
+	<%= c.label :Question %>
+	<%= c.text_field :question %>
+	<%= c.label :Answer %>
+	<%= c.text_field :answer %>
+	<%= c.label :Level %>
+	<%= c.number_field :level_id %>
+	<%= c.submit :Create %>
+<% end %>
