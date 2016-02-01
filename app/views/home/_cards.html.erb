@@ -1,7 +1,11 @@
-<% if user_signed_in? %>
+<% if user_signed_in? || admin_signed_in? %>
 <% @cards.each do |card| %>
 
 <%= content_tag :p, "Question:#{card.question}?", class: "question"%>
+
+<% if admin_signed_in? %>
+<%= link_to "Delete Card", admin_destroy_user_path(card), method: :delete, data: { confirm: "You sure?" }, class: "delete-element" %>
+<%end %>
 <%= content_tag :p, "Answer: #{card.answer}", class: "answer" %>
 <% end %>
 <% end %>
