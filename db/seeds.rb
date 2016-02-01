@@ -11,6 +11,3 @@ Card.create([
 	{question:"What does HTML stand for", answer:"Hypertext Markup Language"},
 	{question:"What is <>", answer:"Carrot"}
 	])
-User.create([
-	{email:"seth@seth.com"}
-	])
