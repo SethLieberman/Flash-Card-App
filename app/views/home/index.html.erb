@@ -34,3 +34,9 @@
 	<%= render "cards_admin_crud", cards: @cards %>
 	<% end %>
 <% end %>
+
+<% if admin_signed_in? %>
+	<%= content_tag :div, id: "admin" do %>
+	<%= render "quizzes_admin_crud", quizzes: @quizzes %>
+	<% end %>
+<% end %>

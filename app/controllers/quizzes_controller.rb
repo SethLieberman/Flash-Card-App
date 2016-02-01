@@ -22,10 +22,10 @@ class QuizzesController < ApplicationController
     	if @quiz.save
       		flash[:notice] = "Quiz was created"
       		#redirect to the quiz index page
-      		redirect_to quizzes_url
+      		redirect_to root_path
     	else
     		flash[:alert] = "Something went wrong."
-      		redirect_to quizzes_url
+      		redirect_to root_path
     	end
     end
 
@@ -39,14 +39,15 @@ class QuizzesController < ApplicationController
 		@quiz = Quiz.find(params[:id])
   	end
 
+  	#updating an already created quiz
   	def update
   		@quiz = Quiz.find(params[:id])
   		if @quiz.update_attributes(quiz_params)
   			flash[:notice] ="Quiz was updated"
-  			redirect_to quizzes_url
+  			redirect_to root_path
   		else
   			flash[:alert] = "Something went wrong."
-  			redirect_to quizzes_url
+  			redirect_to root_path
   		end
   	end
 	
