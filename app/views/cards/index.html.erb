@@ -1,2 +1,13 @@
 <h1>Cards#index</h1>
 <p>Find me in app/views/cards/index.html.erb</p>
+
+<h2>All the cards</h2>
+<% @cards.each do |card| %>
+<!-- displays all the cards -->
+<%= content_tag :p, "Question:#{card.question}?", class: "question"%>
+<%= content_tag :p, "Answer: #{card.answer}", class: "answer" %>
+<%= content_tag :p, "Level: #{card.level_id}", class: "level_id" %>
+<!-- button and link to edit a card -->
+<button><%= link_to "Edit Card", edit_card_path(card) %></button>
+<button><%= link_to "Delete Card", controller: "cards", action: "destroy" %></button>
+<% end %>

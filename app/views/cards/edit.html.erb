@@ -1,2 +1,13 @@
 <h1>Cards#edit</h1>
 <p>Find me in app/views/cards/edit.html.erb</p>
+
+<h2>Edit this card</h2>
+<%= form_for @card do |c| %>
+	<%= c.label :Question %>
+	<%= c.text_field :question %>
+	<%= c.label :Answer %>
+	<%= c.text_field :answer %>
+	<%= c.label :Level %>
+	<%= c.number_field :level_id %>
+	<%= c.submit :Update %>
+<% end %>

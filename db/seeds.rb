@@ -27,7 +27,6 @@ User.create([
 	{email:"tina@tina.com", password: "12345678"}
 	])
 
-
 # Admin.create([
 # 	{email:"skwildcat7@gmail.com", password: "12345678"}
 # 	])
