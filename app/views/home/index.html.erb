@@ -33,6 +33,11 @@
 	<%= content_tag :div, id: "admin" do %>
 	<%= render "cards_admin_crud", cards: @cards %>
 	<% end %>
+
+	<%= content_tag :div, id: "admin" do %>
+	<%= render "new_card_admin", card: @card %>
+	<% end %>
+
 <% end %>
 
 <% if admin_signed_in? %>
