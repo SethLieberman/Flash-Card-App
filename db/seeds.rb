@@ -28,11 +28,49 @@ User.create([
 	{email:"tina@tina.com", password: "12345678"}
 	])
 
+# fname, lname, credibility, level, username, user_id
+Profile.create([
+	{fname: "seth", lname: "helllooooo", credibility: 0, level: 1, username: "helllooooosettthhh", user_id: 1},
+	{fname: "jim", lname: "halpert", credibility: 1000, level: 1, username: "user2", user_id: 2},
+	{fname: "bob", lname: "from account", credibility: 2000, level: 2, username: "user3", user_id: 3},
+	{fname: "tom", lname: "hanks", credibility: 3000, level: 3, username: "user4", user_id: 4},
+	{fname: "tina", lname: "superuser", credibility: 9001, level: 12, username: "user5", user_id: 5}
+	])
+
 PublicCard.create([
 	{question:"What does AJAX stand for?", answer:"Asynchronous JavaScript as XML", tag: "AJAX", user_id: 1},
 	{question:"How to you escape IRB to execute a command in Bash?", answer:"Use back ticks `` ", tag: "bash", user_id: 1},
 	{question:"Blah Blha", answer:"Asynchronous JavaScript as XML", tag: "AJAX", user_id: 2},
 	{question:"What does AJAwqfqfr?", answer:"Asynchrqwft as XML", tag: "AJAX", user_id: 3}
+	])
+
+Level.create([
+	{card_id: 1, quiz_id: 1},
+	{card_id: 2, quiz_id: 2},
+	{card_id: 3, quiz_id: 3},
+	{card_id: 4, quiz_id: 4}
+	])
+
+Question.create([
+	{question:"What does AJAX stand for?", answer:"Asynchronous JavaScript as XML", quiz_id: 1},
+	{question:"What does AJAX stand for?", answer:"Asynchronous JavaScript as XML", quiz_id: 1},
+	{question:"What does AJAX stand for?", answer:"Asynchronous JavaScript as XML", quiz_id: 1},
+	{question:"What does AJAX stand for?", answer:"Asynchronous JavaScript as XML", quiz_id: 2},
+	{question:"What does AJAX stand for?", answer:"Asynchronous JavaScript as XML", quiz_id: 2},
+	{question:"What does AJAX stand for?", answer:"Asynchronous JavaScript as XML", quiz_id: 2},
+	{question:"What does AJAX stand for?", answer:"Asynchronous JavaScript as XML", quiz_id: 3},
+	{question:"What does AJAX stand for?", answer:"Asynchronous JavaScript as XML", quiz_id: 3},
+	{question:"What does AJAX stand for?", answer:"Asynchronous JavaScript as XML", quiz_id: 3},
+	{question:"What does AJAX stand for?", answer:"Asynchronous JavaScript as XML", quiz_id: 4},
+	{question:"What does AJAX stand for?", answer:"Asynchronous JavaScript as XML", quiz_id: 4},
+	{question:"What does AJAX stand for?", answer:"Asynchronous JavaScript as XML", quiz_id: 4}
+	])
+
+Quiz.create([
+	{},
+	{},
+	{},
+	{}
 	])
 
 
