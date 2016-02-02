@@ -31,19 +31,25 @@ class ProfilesController < ApplicationController
   end
 
   #action for updating a profile
+  # def update
+  #   @profile = Profile.find(params[:id])
+  #  #update the profile with the submitted params
+  #   if @profile.update(profile_params)
+  #   #if succesful display message
+  #     flash[:notice] = "Your profile was updated"
+  #     #redirect to the user's profile page
+  #     redirect_to root_path
+  #   else
+  #     #if something went wrong, redirect to that profile's page
+  #     flash[:alert] = "Something went wrong."
+  #     redirect_to root_path
+  #   end
+  # end
+
   def update
     @profile = Profile.find(params[:id])
-   #update the profile with the submitted params
-    if @profile.update(profile_params)
-    #if succesful display message
-      flash[:notice] = "Your profile was updated"
-      #redirect to the user's profile page
-      redirect_to root_path
-    else
-      #if something went wrong, redirect to that profile's page
-      flash[:alert] = "Something went wrong."
-      redirect_to root_path
-    end
+    @profile.update_attributes(profile_params)
+    @profile = Profile.all
     respond_to do |page|
       page.js
     end
