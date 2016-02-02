@@ -78,5 +78,8 @@ $(document).ready(function(){
 
 
 	// $("#card").flip('toggle');
+	$("#card").flip({
+  		trigger: 'click'
+});
 // });
 });
