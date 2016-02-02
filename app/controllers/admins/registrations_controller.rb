@@ -18,10 +18,9 @@ class Admins::RegistrationsController < Devise::RegistrationsController
   end
 
   def edit_user
-    puts "HELOOOOOOOOO SMETH"
     id = params[:id]
-    
-    redirect_to root_url, notice: "SMETH"
+
+    redirect_to root_url
   end
 
   # PUT /resource

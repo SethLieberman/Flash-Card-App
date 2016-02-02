@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
 	
+
   #creating a new profile
   def create
     @profile = Profile.new
@@ -42,6 +43,9 @@ class ProfilesController < ApplicationController
       #if something went wrong, redirect to that profile's page
       flash[:alert] = "Something went wrong."
       redirect_to root_path
+    end
+    respond_to do |page|
+      page.js
     end
   end
 

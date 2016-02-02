@@ -1,2 +1,12 @@
 <h1>Profiles#edit</h1>
 <p>Find me in app/views/profiles/edit.html.erb</p>
+
+<%= form_for @profile do |c| %>
+	<%= c.label :First_Name %>
+	<%= c.text_field :fname %>
+	<%= c.label :Last_Name %>
+	<%= c.text_field :lname %>
+	<%= c.label :Username %>
+	<%= c.text_field :username %>
+	<%= c.submit :Edit %>
+<% end %>

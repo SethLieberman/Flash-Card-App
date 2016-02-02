@@ -5,9 +5,14 @@
 
 <!-- if user is signed in display users page -->
 <% if user_signed_in? %>
-<h1>Home Page</h1>
+<h1>Welcome</h1>
+<%= content_tag :p, "Username: #{current_user.profile.username}" %>
+<%= content_tag :p, "First Name: #{current_user.profile.fname}" %>
+<%= content_tag :p, "Last Name: #{current_user.profile.lname}" %>
+<%= content_tag :p, "Level: #{current_user.profile.level}" %>
+<%= content_tag :p, "Credibility: #{current_user.profile.credibility}" %>
 <% end %>
-<p>Find me in app/views/home/index.html.erb</p>
+
 
 <!-- Log in button hidden if user signed in -->
 <% unless user_signed_in? || admin_signed_in? %>
@@ -29,19 +34,19 @@
   </li>
   	<!-- public card CRUD actions -->
   	<%= content_tag :div, class: "publicCard" do %>
-	<%= render "public_card_crud", cards: @cards %>
+	<%= render "public_cards/public_card_crud", cards: @cards %>
 	<% end %>
 	<!-- create a public card -->
 	<%= content_tag :div, class: "publicCard" do %>
-	<%= render "create_public_card", cards: @cards %>
+	<%= render "public_cards/create_public_card", cards: @cards %>
 	<% end %>
 	<!-- all the cards. No CRUD actions -->
 	<%= content_tag :div, class: "cards" do %>
-	<%= render "cards", cards: @cards %>
+	<%= render "cards/cards", cards: @cards %>
 	<% end %>
 	<!-- user's private cards. Not visible to admins -->
 	<%= content_tag :div, class: "privateCard" do %>
-	<%= render "private_cards", cards: @cards %>
+	<%= render "private_cards/private_cards", cards: @cards %>
 	<% end %>
 
 <% end %>
@@ -50,19 +55,26 @@
 <% if admin_signed_in? %>
 	<!-- all the users -->
 	<%= content_tag :div, class: "users" do %>
-	<%= render "users", users: @users %>
+	<%= render "users/users", users: @users %>
 	<% end %>
 	<!-- all the cards -->
 	<%= content_tag :div, class: "cards" do %>
-	<%= render "cards_admin_crud", cards: @cards %>
+	<%= render "cards/cards_admin_crud", cards: @cards %>
 	<% end %>
 	<!-- create a new card -->
 	<%= content_tag :div, class: "new-card" do %>
-	<%= render "new_card_admin", card: @card %>
+	<%= render "cards/new_card_admin", card: @card %>
 	<% end %>
-	<!-- all quiz CRUD actions -->
+	<!-- all quiz CRUD actions, including quiz questions -->
 	<%= content_tag :div, class: "quizzes" do %>
-	<%= render "quizzes_admin_crud", quiz: @quiz %>
+	<%= render "quizzes/quizzes_admin_crud", quiz: @quiz %>
 	<% end %>
 
+<% end %>
+	
+<!-- only show if user is signed in -->
+<% if user_signed_in? %>
+	<%= content_tag :div, class: "quizzes" do %>
+	<%= render "profiles/edit_profile", users: @users %>
+	<% end %>
 <% end %>

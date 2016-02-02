@@ -1,0 +1,14 @@
+
+
+
+	<button class="editp">Edit Profile</button>
+		<%= form_for @profile, remote: true, html: {method: :patch}, html: {class: "edit-profile"} do |c| %>
+			<%= c.label :First_Name %>
+			<%= c.text_field :fname %>
+			<%= c.label :Last_Name %>
+			<%= c.text_field :lname %>
+			<%= c.label :Username %>
+			<%= c.text_field :username %>
+			<%= c.submit :Edit %>
+		<% end %>
+	

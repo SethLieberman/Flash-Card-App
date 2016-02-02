@@ -14,6 +14,13 @@ class HomeController < ApplicationController
   	#quizzes
   	@quizzes = Quiz.all
   	@quiz = Quiz.new
+    # profile
+    if current_user
+      @profile = current_user.profile
+    end
+    #questions
+    @question = Question.new
+
   end
 
 end
