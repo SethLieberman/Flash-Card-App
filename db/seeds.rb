@@ -8,7 +8,18 @@
 
 
 Card.create([
+	{question:"Web Server / Host", answer:"a computer in “the cloud” networked to all other computers connected to the web that holds the content to be served", level_id: 1, admin_id: 1},
+	{question:"What is the Internet", answer:"the network infrastructure that interconnects hosts with clients", level_id: 1, admin_id: 1},	
+	{question:"Client: Consumer Machines", answer:"these machines request resources from web server hosts which are then rendered on the machines by the web browser", level_id: 1, admin_id: 1},
+	{question:"Part of a Website", answer:"HTML- content markup, CSS- layout/styling, JavaScript- client-side behavior, Ruby, PHP, or Python- server-side behavior", level_id: 1, admin_id: 1},
+	{question:"HTML", answer:"Hyper Text Markup Language, Marks up text, With CSS, associates style information, Contains tags and regular text", level_id: 1, admin_id: 1},
 	{question:"What does HTML stand for", answer:"Hypertext Markup Language", level_id: 1, admin_id: 1},
+	{question:"Creating an HTML file", answer:"What you see, what the browser. Can be created in any plain text editor as a plain text file that ends in .htm or .html", level_id: 1, admin_id: 1},
+	{question:"HTML Tags", answer:"Enclosed in 2 angle brackets, A closing tag has a / before the keyword", level_id: 1, admin_id: 1},
+	{question:"HTML Attributes", answer:"Come in name/value pars like: name=‘value’", level_id: 1, admin_id: 1},
+	{question:"Head Section", answer:"Contains more than just the title of your document, Encloses external files (CSS, JavaScript, etc), You can also create CSS or JavaScript directly inside", level_id: 1, admin_id: 1},
+	{question:"Body Section", answer:"Contains everything that the user sees on their screen, Uses HTML tags to demarcate content like <p> and <div>", level_id: 1, admin_id: 1},
+	{question:"<a> Tag", answer:"A link tag that is used to link to other pages on the web and to other sections of the document itself, Requires an href attribute to tell the browser where to go when the link is clicked, The target attribute can be given a value of _blank to open the link in a new tab", level_id: 1, admin_id: 1},
 	{question:"What is <>", answer:"Carrot", level_id: 1, admin_id: 1},
 	{question:"What is love", answer:"baby don't hurt me", level_id: 1, admin_id: 1},
 	{question:"Hello", answer:"It's me", level_id: 1, admin_id: 1},
@@ -76,12 +87,12 @@ Quiz.create([
 
 
 PrivateCard.create([
-	{question:"What is a questions?", answer:"Dont Ask", tag: "random", user_id: 1},
-	{question:"Where am I?", answer:"Lost", tag: "random", user_id: 1},
-	{question:"Who are you?", answer:"Seth", tag: "random", user_id: 2},
-	{question:"Why is the sky blue?", answer:"Why Not", tag: "random", user_id: 2},
-	{question:"Sushi?", answer:"Yes Please", tag: "random", user_id: 3},
-	{question:"How did I get here?", answer:"Booze", tag: "random", user_id: 3},
+	{question:"What is a questions?", answer:"Dont Ask", tag: "random", user_id: 1, description: "A Question"},
+	{question:"Where am I?", answer:"Lost", tag: "random", user_id: 1, description: "A 2 Question"},
+	{question:"Who are you?", answer:"Seth", tag: "random", user_id: 2, description: "A 3 Question"},
+	{question:"Why is the sky blue?", answer:"Why Not", tag: "random", user_id: 2, description: "A 4 Question"},
+	{question:"Sushi?", answer:"Yes Please", tag: "random", user_id: 3, description: "A 5 Question"},
+	{question:"How did I get here?", answer:"Booze", tag: "random", user_id: 3, description: "A 6 Question"},
 	])
 
 

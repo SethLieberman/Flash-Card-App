@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160202025304) do
+ActiveRecord::Schema.define(version: 20160202212438) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -61,8 +61,9 @@ ActiveRecord::Schema.define(version: 20160202025304) do
     t.string   "answer"
     t.string   "tag"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "description", limit: 25
   end
 
   create_table "profiles", force: :cascade do |t|
