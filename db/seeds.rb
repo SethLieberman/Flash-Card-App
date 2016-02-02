@@ -8,6 +8,11 @@
 
 
 Card.create([
+	{question:"Web Server / Host", answer:"a computer in “the cloud” networked to all other computers connected to the web that holds the content to be served", level_id: 1, admin_id: 1},
+	{question:"What is the Internet", answer:"the network infrastructure that interconnects hosts with clients", level_id: 1, admin_id: 1},	
+	{question:"Client: Consumer Machines", answer:"these machines request resources from web server hosts which are then rendered on the machines by the web browser", level_id: 1, admin_id: 1},
+	{question:"Part of a Website", answer:"HTML- content markup, CSS- layout/styling, JavaScript- client-side behavior, Ruby, PHP, or Python- server-side behavior", level_id: 1, admin_id: 1},
+	{question:"HTML", answer:"Hyper Text Markup Language, Marks up text, With CSS, associates style information, Contains tags and regular text", level_id: 1, admin_id: 1},
 	{question:"What does HTML stand for", answer:"Hypertext Markup Language", level_id: 1, admin_id: 1},
 	{question:"What is <>", answer:"Carrot", level_id: 1, admin_id: 1},
 	{question:"What is love", answer:"baby don't hurt me", level_id: 1, admin_id: 1},
