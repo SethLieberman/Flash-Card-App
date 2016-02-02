@@ -1,2 +1,12 @@
 <h1>PrivateCards#edit</h1>
 <p>Find me in app/views/private_cards/edit.html.erb</p>
+<!-- for for editing a new private card -->
+<%= form_for @privateCard do |c| %>
+	<%= c.label :Question %>
+	<%= c.text_field :question %>
+	<%= c.label :Answer %>
+	<%= c.text_field :answer %>
+	<%= c.label :Tag %>
+	<%= c.text_field :tag %>
+	<%= c.submit :Edit %>
+<% end %>

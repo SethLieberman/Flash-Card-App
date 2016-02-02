@@ -1,6 +1,27 @@
 class PrivateCardsController < ApplicationController
+
+	  #creating a new private card
+  def create
+    @privateCard = PrivateCard.new
+    #create the card
+    @privateCard = PrivateCard.create(private_card_params)
+    #update the newly created card with the current user who created it
+    PrivateCard.last.update(user_id: current_user.id)
+    #redirections if card was saved or not along with flash messaging
+    if @privateCard.save
+      flash[:notice] = "Private card was created"
+      #redirect to the cards index page
+      redirect_to root_path
+    else
+      flash[:alert] = "Something went wrong."
+      redirect_to root_path
+    end
+  end
+
+
+
 	# creating a new private card
-	def new
+def new
 		@privateCard = PrivateCard.new
     #create the card
     @privateCard = PrivateCard.create(private_card_params)
@@ -28,7 +49,7 @@ end
   end
 
   def update
-  	@rivateCard = PrivateCard.find(params[:id])
+  	@privateCard = PrivateCard.find(params[:id])
    #update the card with the submitted params
    if @privateCard.update(private_card_params)
     #if succesful display message
@@ -41,6 +62,16 @@ end
       redirect_to root_path
   end
 end
+
+# def update
+# 	@privateCard = PrivateCard.find(params[:id])
+#     @privateCard.update_attributes(privateCard_params)
+#     @privateCard = PrivateCard.all
+#     respond_to do |page|
+#       page.js
+#     end
+# end
+
 
 def index
 end

@@ -28,6 +28,8 @@ $(document).on('page:update', function(){
 	// this will toggle the anwer when you click on the questions
 	$(".question").click(function(e){
 		$(".answer").toggle();
-
 	});
+	// hidden form under private cards
+	$(".edit-element").hide();
+	// $("#card").flip('toggle');
 });

@@ -1,18 +1,43 @@
 <h2>All the private cards</h2>
-
-<% @privateCards.each do |card| %>
-<% if current_user.id == card.user_id%>
-	<!-- displays all the cards -->
-	<%= content_tag :p, "Question:#{card.question}?", class: "question"%>
-	<%= content_tag :p, "Answer: #{card.answer}", class: "answer" %>
-	<%= content_tag :p, "Tag: #{card.tag}", class: "tag" %>
-	<%= content_tag :p, "Created By: #{card.user.email}", class: "user-email" %>
-	<!-- button and link to edit a card -->
-	<% if current_user == card.user || current_admin %>
-	<!-- only display edit button if the public card was created by the current user or is an admin -->
-	<button><%= link_to "Edit Card", edit_private_card_path(card) %></button>
-	<!-- only display delete button if the public card was created by the current user or is an admin -->
-	<button><%= link_to "Delete Card", private_card_path(card), method: :delete, data: { confirm: "You sure?" } %></button>
+	<!-- form for creating new private card -->
+	<h2>Create New Private Card</h2>
+	<%= form_for @privateCard do |c| %>
+		<%= c.label :Question %>
+		<%= c.text_field :question %>
+		<%= c.label :Answer %>
+		<%= c.text_field :answer %>
+		<%= c.label :Tag %>
+		<%= c.text_field :tag %>
+		<%= c.submit :Create %>
 	<% end %>
-<% end %>
+<!-- this is to ensure that the user sees this but the admin cannot -->
+<% if user_signed_in? %>
+	<% @privateCards.each do |card| %>
+		<% if current_user.id == card.user_id %>
+			<!-- displays all the cards -->
+			<%= content_tag :p, "Question:#{card.question}?", class: "question"%>
+			<%= content_tag :p, "Answer: #{card.answer}", class: "answer" %>
+			<%= content_tag :p, "Tag: #{card.tag}", class: "tag" %>
+			<%= content_tag :p, "Created By: #{card.user.email}", class: "user-email" %>
+			<!-- button and link to edit a card -->
+			<% if current_user == card.user || current_admin %>
+			<!-- only display edit button if the public card was created by the current user or is an admin -->
+			<button><%= link_to "Edit Card", edit_private_card_path(card) %></button>
+			<!-- form for editing private card -->
+			<%= form_for @privateCard, remote: true, html: {method: :patch}, html: {class: "edit-element"} do |c| %>
+				<%= c.label :Question %>
+				<%= c.text_field :question %>
+				<%= c.label :Answer %>
+				<%= c.text_field :answer %>
+				<%= c.label :Tag %>
+				<%= c.text_field :tag %>
+				<%= c.submit :Edit %>
+			<% end %>
+
+			<!-- only display delete button if the public card was created by the current user or is an admin -->
+			<button><%= link_to "Delete Card", private_card_path(card), method: :delete, data: { confirm: "You sure?" } %></button>
+			<% end %>
+
+		<% end %>
+	<% end %>
 <% end %>
