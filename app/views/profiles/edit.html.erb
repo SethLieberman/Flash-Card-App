@@ -1,2 +1,9 @@
 <h1>Profiles#edit</h1>
 <p>Find me in app/views/profiles/edit.html.erb</p>
+
+<%= form_for @profile do |c| %>
+	<%= c.text_field :fname, placeholder:"First Name" %>
+	<%= c.text_field :lname, placeholder: "Last Name" %>
+	<%= c.text_field :username, placeholder: "Username" %>
+	<%= c.submit :Edit %>
+<% end %>
