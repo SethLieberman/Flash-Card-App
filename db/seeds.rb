@@ -81,12 +81,12 @@ Quiz.create([
 
 
 PrivateCard.create([
-	{question:"What is a questions?", answer:"Dont Ask", tag: "random", user_id: 1},
-	{question:"Where am I?", answer:"Lost", tag: "random", user_id: 1},
-	{question:"Who are you?", answer:"Seth", tag: "random", user_id: 2},
-	{question:"Why is the sky blue?", answer:"Why Not", tag: "random", user_id: 2},
-	{question:"Sushi?", answer:"Yes Please", tag: "random", user_id: 3},
-	{question:"How did I get here?", answer:"Booze", tag: "random", user_id: 3},
+	{question:"What is a questions?", answer:"Dont Ask", tag: "random", user_id: 1, description: "A Question"},
+	{question:"Where am I?", answer:"Lost", tag: "random", user_id: 1, description: "A 2 Question"},
+	{question:"Who are you?", answer:"Seth", tag: "random", user_id: 2, description: "A 3 Question"},
+	{question:"Why is the sky blue?", answer:"Why Not", tag: "random", user_id: 2, description: "A 4 Question"},
+	{question:"Sushi?", answer:"Yes Please", tag: "random", user_id: 3, description: "A 5 Question"},
+	{question:"How did I get here?", answer:"Booze", tag: "random", user_id: 3, description: "A 6 Question"},
 	])
 
 
