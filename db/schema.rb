@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160201230501) do
+ActiveRecord::Schema.define(version: 20160202025304) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -94,9 +94,10 @@ ActiveRecord::Schema.define(version: 20160201230501) do
   end
 
   create_table "quizzes", force: :cascade do |t|
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "question_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+    t.integer  "level_id"
   end
 
   create_table "users", force: :cascade do |t|

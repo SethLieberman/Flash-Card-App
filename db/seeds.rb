@@ -68,11 +68,12 @@ Question.create([
 	])
 
 Quiz.create([
-	{},
-	{},
-	{},
-	{}
+	{name: "Quiz 1", level_id: 1},
+	{name: "Quiz 2", level_id: 2},
+	{name: "Quiz 3", level_id: 3},
+	{name: "Quiz 4", level_id: 4}
 	])
+
 
 PrivateCard.create([
 	{question:"What is a questions?", answer:"Dont Ask", tag: "random", user_id: 1},

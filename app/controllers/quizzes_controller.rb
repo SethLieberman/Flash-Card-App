@@ -3,7 +3,7 @@ class QuizzesController < ApplicationController
 	#authenticate that user is an admin before touching any quiz actions(Devise helper)
 	before_action :authenticate_admin!
 
-	#for showing all quizes
+	#for showing all quizzes
 	def index
 		@quizzes = Quiz.all
 	end
@@ -17,17 +17,17 @@ class QuizzesController < ApplicationController
 	def create
 		@quiz = Quiz.new
 		#create the quiz
-		@quiz.create(quiz_params)
-    	#redirections if quiz was saved or not along with flash messaging
-    	if @quiz.save
-      		flash[:notice] = "Quiz was created"
-      		#redirect to the quiz index page
-      		redirect_to root_path
-    	else
-    		flash[:alert] = "Something went wrong."
-      		redirect_to root_path
-    	end
-    end
+		@quiz = Quiz.create(quiz_params)
+  	#redirections if quiz was saved or not along with flash messaging
+  	if @quiz.save
+    		flash[:notice] = "Quiz was created"
+    		#redirect to the home index page
+    		redirect_to root_path
+  	else
+  		flash[:alert] = "Something went wrong."
+    		redirect_to root_path
+  	end
+  end
 
 	#for showing the currently selected quiz
   	def show
@@ -56,12 +56,12 @@ class QuizzesController < ApplicationController
     @quiz = Quiz.find(params[:id])
     #if succesful display message
       if @quiz.destroy
-        flash[:notice] = "Quiz was destroyed"
+        flash[:notice] = "Quiz was deleted"
         #redirect to quiz index
         redirect_to root_path
       else
-      flash[:alert] = "Something went wrong."
-      redirect_to root_path
+        flash[:alert] = "Something went wrong."
+        redirect_to root_path
       end
     end
 	
@@ -70,7 +70,7 @@ class QuizzesController < ApplicationController
 
 	#require the params of quiz
 	def quiz_params 
-    params.require(:quiz).permit(:question, :answer)
+    params.require(:quiz).permit(:level_id, :name)
   end
    
 end

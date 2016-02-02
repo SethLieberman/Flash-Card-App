@@ -19,49 +19,50 @@
 <a href="login_admin">Log in Admin</a>
 <% end %>
 
+<!-- below here visible to both user and admin -->
+<!-- some partials may have logic within tdhem that prevents -->
+<!-- a user or admin from seeing certain content contained within the partial -->
 <% if user_signed_in? || admin_signed_in? %>
   <li>
+  	<!-- show the logout button if anyone is logged in -->
   <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
   </li>
-
+  	<!-- public card CRUD actions -->
   	<%= content_tag :div, class: "publicCard" do %>
 	<%= render "public_card_crud", cards: @cards %>
 	<% end %>
-
+	<!-- create a public card -->
 	<%= content_tag :div, class: "publicCard" do %>
 	<%= render "create_public_card", cards: @cards %>
 	<% end %>
-
+	<!-- all the cards. No CRUD actions -->
 	<%= content_tag :div, class: "cards" do %>
 	<%= render "cards", cards: @cards %>
 	<% end %>
-
+	<!-- user's private cards. Not visible to admins -->
 	<%= content_tag :div, class: "privateCard" do %>
 	<%= render "private_cards", cards: @cards %>
 	<% end %>
 
 <% end %>
 
-
+<!-- below here is only visible to admins -->
 <% if admin_signed_in? %>
-
+	<!-- all the users -->
 	<%= content_tag :div, class: "users" do %>
 	<%= render "users", users: @users %>
 	<% end %>
-
+	<!-- all the cards -->
 	<%= content_tag :div, class: "cards" do %>
 	<%= render "cards_admin_crud", cards: @cards %>
 	<% end %>
-
+	<!-- create a new card -->
 	<%= content_tag :div, class: "new-card" do %>
 	<%= render "new_card_admin", card: @card %>
 	<% end %>
-
+	<!-- all quiz CRUD actions -->
 	<%= content_tag :div, class: "quizzes" do %>
 	<%= render "quizzes_admin_crud", quiz: @quiz %>
 	<% end %>
 
-	<%= content_tag :div, class: "new-quiz" do %>
-	<%= render "new_quiz_admin", quiz: @quiz %>
-	<% end %>
 <% end %>
