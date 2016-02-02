@@ -1,0 +1,8 @@
+<h2>Edit this quiz</h2>
+<%= form_for @quiz do |q| %>
+	<%= q.label :Quiz_Name %>
+	<%= q.text_field :name %>
+	<%= q.label :Level %>
+	<%= q.number_field :level_id %>
+	<%= q.submit :Update %>
+<% end %>
