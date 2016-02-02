@@ -7,6 +7,6 @@
 <%= link_to "Delete Card", admin_destroy_user_path(card), method: :delete, data: { confirm: "You sure?" }, class: "delete-element" %>
 <%end %>
 <%= content_tag :p, "Answer: #{card.answer}", class: "answer" %>
-<button><%= link_to "Next Card" class: "next_card", method: :put :remote :true %></button>
+<button><%= link_to "Next Card" class: "next-card", method: :put :remote :true %></button>
 <% end %>
 <% end %>
