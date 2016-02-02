@@ -53,9 +53,9 @@ class PrivateCardsController < ApplicationController
     @privateCard.update_attributes(private_card_params)
     @privateCards = PrivateCard.all
 
-    # respond_to do |page|
-    #   page.js
-    # end
+    respond_to do |page|
+      page.js
+    end
   end
 
 

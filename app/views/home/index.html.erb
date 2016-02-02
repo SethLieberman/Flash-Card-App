@@ -48,6 +48,14 @@
 		<%= content_tag :div, class: "privateCard" do %>
 		<%= render "private_cards/private_cards", privateCards: @privateCards %>
 		<% end %>
+		<!-- <button value="2">Display Card</button> -->
+		<%= content_tag :div, class: "privateCardSingle" do %>
+		<%= render "private_cards/private_cards_info", selectedCard: PrivateCard.find(1) %>
+		<% end %>
+
+		<%= content_tag :div, class: "privateCardEdit" do %>
+		<%= render "private_cards/private_card_edit", card: PrivateCard.find(1) %>
+		<% end %>
 	<% end %>
 <br>	
 <br>	

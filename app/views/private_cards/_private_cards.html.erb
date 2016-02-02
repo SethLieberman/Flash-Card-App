@@ -10,37 +10,13 @@
 		<%= c.text_field :tag %>
 		<%= c.submit :Create %>
 	<% end %>
-		
-<!-- this is to ensure that the user sees this but the admin cannot -->
-		<% if user_signed_in? %>
-			<% privateCards.each do |card| %>
-		<% if current_user.id == card.user_id %>
-<!-- displays all the cards -->
-			<%= content_tag :p, "Question:#{card.question}?", class: "question"%>
-			<%= content_tag :p, "Answer: #{card.answer}", class: "answer" %>
-			<%= content_tag :p, "Tag: #{card.tag}", class: "tag" %>
-			<%= content_tag :p, "Created By: #{card.user.email}", class: "user-email" %>
-			
-			<!-- only display delete button if the public card was created by the current user or is an admin -->
-			<button class ="edit-private-cards">Edit Card</button>
-			<button><%= link_to "Delete Card", private_card_path(card), method: :delete, data: { confirm: "You sure?" } %></button>
-		<% end %>
-	<% end %>
-	<% end %>
+
+	
 		<% privateCards.each do |card| %>
 			<!-- button and link to edit a card -->
 		<% if current_user == card.user || current_admin %>
 			<!-- form for editing private card -->
-			<%= form_for card, remote: true, html: {method: :patch}, html: {class: "private-cards"} do |c| %>
-				<%= c.label :Question %>
-				<%= c.text_field :question %>
-				<%= c.label :Answer %>
-				<%= c.text_field :answer %>
-				<%= c.label :Tag %>
-				<%= c.text_field :tag %>
-				<%= c.submit :Edit %>
-			<% end %>
-
+		
 		<% end %>
 <% end %>
 
