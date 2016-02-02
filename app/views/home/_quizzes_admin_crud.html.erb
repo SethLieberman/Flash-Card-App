@@ -7,7 +7,30 @@
 	<% quiz.questions.each do |q| %>
 		<%= content_tag :p, "Question: #{q.question}", class: "quiz-question"%>
 		<%= content_tag :p, "Answer: #{q.answer}", class: "quiz-answer"%>
+		<!-- edit or destroy a question within a quiz -->
+		<button class="edit-question">Edit Question</button>
+			<%= form_for q, remote: true, html: {method: :patch}, html: {class: "edit-question-form"} do |q| %>
+			<%= q.label :Question %>
+			<%= q.text_field :question %>
+			<%= q.label :Answer %>
+			<%= q.text_field :answer %>
+			<%= q.label :Quiz_ID %>
+			<%= q.number_field :quiz_id %>
+			<%= q.submit :Update %>
+		<% end %>
+		<button><%= link_to "Delete Question", question_path(q), method: :delete, data: { confirm: "You sure?" }, class: "delete-element" %></button>
 	<% end %>
+	<!-- create a new question for this quiz -->
+	<h2>Add a question to this quiz</h2>
+	<%= form_for @question do |q| %>
+		<%= q.label :Question %>
+		<%= q.text_field :question %>
+		<%= q.label :Answer %>
+		<%= q.text_field :answer %>
+		<%= q.hidden_field :quiz_id, :value => "#{quiz.id}" %>
+		<%= q.submit :Create_Question %>
+	<% end %>
+	<!-- edit or destroy entire quizzes, does not delete questions -->
 	<button><%= link_to "Edit Quiz", edit_quiz_path(quiz) %></button>
 	<button><%= link_to "Delete Quiz", quiz_path(quiz), method: :delete, data: { confirm: "You sure?" }, class: "delete-element" %></button>
 <%end %>

@@ -65,9 +65,13 @@
 	<%= content_tag :div, class: "new-card" do %>
 	<%= render "new_card_admin", card: @card %>
 	<% end %>
-	<!-- all quiz CRUD actions -->
+	<!-- all quiz CRUD actions, including quiz questions (except edit) -->
 	<%= content_tag :div, class: "quizzes" do %>
 	<%= render "quizzes_admin_crud", quiz: @quiz %>
+	<% end %>
+	<!-- edit a quiz question -->
+	<%= content_tag :div, class: "quizzes" do %>
+	<%= render "edit_question", quiz: @quiz %>
 	<% end %>
 
 <% end %>
