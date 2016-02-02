@@ -17,7 +17,8 @@
 
 
 // When the page "upadates" this will allow us to delete users and cards
-$(document).on('page:update', function(){
+$(document).ready(function(){
+// $(document).on('page:update', function(){
 	
 	// this is hiding the answer
 	$(".answer").hide();
@@ -25,12 +26,18 @@ $(document).on('page:update', function(){
 	$(".question").click(function(e){
 		$(".answer").toggle();
 	});
-	// hidden form under private cards
-	$(".edit-element").hide();
+
+	// hiding and showing edit profile form
 	$(".edit-profile").hide();
 	$(".editp").click(function(){
-		$(".edit-profile").toggle(400);
+		$(".edit-profile").toggle();
+	});
+	// hiding and showing private cards
+	$(".private-cards").hide();
+	$(".edit-private-cards").click(function(){
+		$(".private-cards").toggle();
 	});
 
 	// $("#card").flip('toggle');
+// });
 });

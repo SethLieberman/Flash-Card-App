@@ -22,9 +22,9 @@
 			<!-- button and link to edit a card -->
 			<% if current_user == card.user || current_admin %>
 			<!-- only display edit button if the public card was created by the current user or is an admin -->
-			<button><%= link_to "Edit Card", edit_private_card_path(card) %></button>
+			
 			<!-- form for editing private card -->
-			<%= form_for @privateCard, remote: true, html: {method: :patch}, html: {class: "edit-element"} do |c| %>
+			<%= form_for card, remote: true, html: {method: :patch}, html: {class: "private-cards"} do |c| %>
 				<%= c.label :Question %>
 				<%= c.text_field :question %>
 				<%= c.label :Answer %>
@@ -35,6 +35,7 @@
 			<% end %>
 
 			<!-- only display delete button if the public card was created by the current user or is an admin -->
+			<button class ="edit-private-cards">Edit Card</button>
 			<button><%= link_to "Delete Card", private_card_path(card), method: :delete, data: { confirm: "You sure?" } %></button>
 			<% end %>
 
