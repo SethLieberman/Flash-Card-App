@@ -1,11 +1,10 @@
-<h1>Questions#edit</h1>
-<p>Find me in app/views/questions/edit.html.erb</p>
 <h2>Edit a question</h2>
 <%= form_for @question do |q| %>
 		<%= q.label :Question %>
 		<%= q.text_field :question %>
 		<%= q.label :Answer %>
 		<%= q.text_field :answer %>
-		<%= q.hidden_field :quiz_id, :value => "#{quiz.id}" %>
+		<%= q.label :Quiz_ID %>
+		<%= q.number_field :quiz_id %>
 		<%= q.submit :Create_Question %>
 	<% end %>

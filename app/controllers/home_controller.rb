@@ -14,6 +14,8 @@ class HomeController < ApplicationController
   	#quizzes
   	@quizzes = Quiz.all
   	@quiz = Quiz.new
+    #questions
+    @question = Question.new
   end
 
 end

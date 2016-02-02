@@ -1,0 +1,11 @@
+<h2>Create a new question</h2>
+
+<%= form_for @question do |q| %>
+	<%= q.label :Question %>
+	<%= q.text_field :question %>
+	<%= q.label :Answer %>
+	<%= q.text_field :answer %>
+	<%= q.label :Assign_To_Quiz_ID %>
+	<%= q.number_field :quiz_id %>
+	<%= q.submit :Create_Question %>
+<% end %>
