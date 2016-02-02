@@ -27,6 +27,8 @@
   	<!-- show the logout button if anyone is logged in -->
   <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
   </li>
+
+  	<button class="show-public-cards-button">Display All Public Cards</button>
   	<!-- public card CRUD actions -->
   	<%= content_tag :div, class: "publicCard" do %>
 	<%= render "public_cards/public_card_crud", cards: @cards %>
@@ -39,9 +41,13 @@
 	<%= content_tag :div, class: "cards" do %>
 	<%= render "cards/cards", cards: @cards %>
 	<% end %>
-	<!-- user's private cards. Not visible to admins -->
-	<%= content_tag :div, class: "privateCard" do %>
-	<%= render "private_cards/private_cards", cards: @cards %>
+
+	<!-- private cards only need to be shown to a user -->
+	<% if user_signed_in? %>
+		<!-- user's private cards. Not visible to admins -->
+		<%= content_tag :div, class: "privateCard" do %>
+		<%= render "private_cards/private_cards", cards: @cards %>
+		<% end %>
 	<% end %>
 
 <% end %>
@@ -49,22 +55,31 @@
 <!-- below here is only visible to admins -->
 <% if admin_signed_in? %>
 	<!-- all the users -->
+	<button class="show-all-users">Display All Users</button>
 	<%= content_tag :div, class: "users" do %>
 	<%= render "users/users", users: @users %>
 	<% end %>
 	<!-- all the cards -->
+	<button class="show-cards-button">Display All Cards</button>
 	<%= content_tag :div, class: "cards" do %>
 	<%= render "cards/cards_admin_crud", cards: @cards %>
 	<% end %>
 	<!-- create a new card -->
+	<button class="create-new-card-button">Create A New Card</button>
 	<%= content_tag :div, class: "new-card" do %>
 	<%= render "cards/new_card_admin", card: @card %>
 	<% end %>
-	<!-- all quiz CRUD actions, including quiz questions -->
+	<!-- all quiz RUD actions, including quiz questions. Create is seperate-->
+	<button class="show-quizzes-button">Display All Quizzes</button>
 	<%= content_tag :div, class: "quizzes" do %>
 	<%= render "quizzes/quizzes_admin_crud", quiz: @quiz %>
 	<% end %>
-
+	<!-- for toggling form for creating a new quiz -->
+	<button id="new-quiz-button">Create Quiz</button>
+	<!-- the rendered view for creating a quiz -->
+	<%= content_tag :div, class: "create-quiz" do %>
+	<%= render "quizzes/new_quiz", quiz: @quiz %>
+	<% end %>
 <% end %>
 	
 <!-- only show if user is signed in -->

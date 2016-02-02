@@ -38,6 +38,45 @@ $(document).ready(function(){
 		$(".private-cards").toggle();
 	});
 
+	//hiding and showing create quiz function
+	//hide the content to be shown initially
+	$(".create-quiz").hide();
+	// when new quiz button is clicked, toggle the hidden content
+	$("#new-quiz-button").click(function(){
+		$(".create-quiz").toggle();
+	});
+
+	//hiding and showing all the quizzes
+	$(".quizzes").hide();
+	$(".show-quizzes-button").click(function(){
+		$(".quizzes").toggle();
+	});
+
+	// hiding and showing all the cards
+	$(".cards").hide();
+	$(".show-cards-button").click(function(){
+		$(".cards").toggle();
+	});
+
+	//hiding and showing all the public cards
+	$(".publicCard").hide();
+	$(".show-public-cards-button").click(function(){
+		$(".publicCard").toggle();
+	});
+
+	//hiding and showing all the users
+	$(".users").hide();
+	$(".show-all-users").click(function(){
+		$(".users").toggle();
+	});
+
+	//hiding and showing card create form
+	$(".new-card").hide();
+	$(".create-new-card-button").click(function(){
+		$(".new-card").toggle();
+	});
+
+
 	// $("#card").flip('toggle');
 // });
 });
