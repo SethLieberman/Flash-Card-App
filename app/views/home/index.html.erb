@@ -4,14 +4,9 @@
 <% end %>
 
 <!-- if user is signed in display users page -->
-<% if user_signed_in? %>
-<h1>Welcome</h1>
-<%= content_tag :p, "Username: #{current_user.profile.username}" %>
-<%= content_tag :p, "First Name: #{current_user.profile.fname}" %>
-<%= content_tag :p, "Last Name: #{current_user.profile.lname}" %>
-<%= content_tag :p, "Level: #{current_user.profile.level}" %>
-<%= content_tag :p, "Credibility: #{current_user.profile.credibility}" %>
-<% end %>
+<%= content_tag :div, id:"profile_content" do %>
+<%= render 'profile_info' %>
+<%end%>
 
 
 <!-- Log in button hidden if user signed in -->
