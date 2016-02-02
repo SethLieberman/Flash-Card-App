@@ -40,10 +40,14 @@
 	<%= render "cards/cards", cards: @cards %>
 	<% end %>
 	<!-- user's private cards. Not visible to admins -->
-	<%= content_tag :div, class: "privateCard" do %>
-	<%= render "private_cards/private_cards", cards: @cards %>
-	<% end %>
+	<%= content_tag :div, class: "private_card_content" do %>
 
+	<%= render "private_cards/private_cards", privateCards: @privateCards %>
+	<% end %>
+<br>	
+<br>	
+<br>	
+<br>	
 <% end %>
 
 <!-- below here is only visible to admins -->
