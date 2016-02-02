@@ -1,0 +1,8 @@
+<p>Create a new quiz</p>
+	<%= form_for @quiz do |c| %>
+	<%= c.label :Quiz_Name %>
+	<%= c.text_field :name %>
+	<%= c.label :Level %>
+	<%= c.number_field :level_id %>
+	<%= c.submit :Create %>
+<% end %>
