@@ -50,16 +50,11 @@ class PrivateCardsController < ApplicationController
 
   def update
     @privateCard = PrivateCard.find(params[:id])
-     #update the card with the submitted params
-    if @privateCard.update(private_card_params)
-      #if succesful display message
-      flash[:notice] = "Public card was updated"
-        #redirect to the that card's page
-        redirect_to root_path
-    else
-        #if something went wrong, redirect home index page
-        flash[:alert] = "Something went wrong."
-        redirect_to root_path
+    @privateCard.update_attributes(private_card_params)
+    @privateCards = PrivateCard.all
+
+    respond_to do |page|
+      page.js
     end
   end
 
