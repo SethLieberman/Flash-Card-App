@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   #basically the root to is what devise looks to go after signining in or up.
   devise_scope :user do
     get "login", to: "users/sessions#new"
+    resources :profiles
   end
 
   devise_scope :admin do
