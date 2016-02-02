@@ -5,9 +5,14 @@
 
 <!-- if user is signed in display users page -->
 <% if user_signed_in? %>
-<h1>Home Page</h1>
+<h1>Welcome</h1>
+<%= content_tag :p, "Username: #{current_user.profile.username}" %>
+<%= content_tag :p, "First Name: #{current_user.profile.fname}" %>
+<%= content_tag :p, "Last Name: #{current_user.profile.lname}" %>
+<%= content_tag :p, "Level: #{current_user.profile.level}" %>
+<%= content_tag :p, "Credibility: #{current_user.profile.credibility}" %>
 <% end %>
-<p>Find me in app/views/home/index.html.erb</p>
+
 
 <!-- Log in button hidden if user signed in -->
 <% unless user_signed_in? || admin_signed_in? %>
@@ -66,3 +71,10 @@
 	<% end %>
 
 <% end %>
+	
+	<!-- only show if user is signed in -->
+	<% if user_signed_in? %>
+		<%= content_tag :div, class: "quizzes" do %>
+		<%= render "edit_profile", users: @users %>
+		<% end %>
+	<% end %>

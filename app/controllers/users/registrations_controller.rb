@@ -21,7 +21,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # PUT /resource
   def update
     super
-      @user = User.find(params[:id])
+    @user = User.find(params[:id])
    # #update the card with the submitted params
    #  if @user.update(user_params)
    #  #if succesful display message
