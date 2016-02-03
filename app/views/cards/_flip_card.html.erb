@@ -4,6 +4,7 @@
   <div class="front"> 
   	<div>
     <%= content_tag :p, "Question:#{@cardDisplay[@counter].question}?", class: ""%>
+      <%= content_tag :p, "", class: "cardQuestion"%>
     </div>
   </div> 
   
@@ -11,6 +12,8 @@
     <div>
    <%= content_tag :p, "Answer: #{@cardDisplay[@counter].answer}", class: "" %>
   </div>
+      <%= content_tag :p, "", class: "cardAnswer" %>
+    </div>
   </div> 
 </div>
 

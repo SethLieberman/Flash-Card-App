@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  #home page, and basically all site content is in this view
   root "home#index"
 
   devise_for :users, controllers: {
@@ -7,8 +8,6 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     passwords: 'users/passwords'
   }
-
-
 
   devise_for :admins, controllers: {
     sessions: 'admins/sessions',
@@ -42,17 +41,6 @@ Rails.application.routes.draw do
   resources :public_cards
   resources :questions
   resources :quizzes
-  #custom routing for the counter#next action in the home controller
-  resources :home do
-    collection do 
-      post 'counter_next', :action => :counter_next
-    end
-  end
-
-  #root page is the sign in page for a user
-
-
-
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
