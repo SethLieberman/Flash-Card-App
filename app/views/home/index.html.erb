@@ -101,15 +101,10 @@
 <% end %>
 
 <!-- FLIP CARD -->
-<% if user_signed_in? %>
 
-<div id="card"> 
-  <div class="front"> 
-    <%= content_tag :p, "Question:#{@cardDisplay[1].question}?", class: ""%>
-  </div> 
-  <div class="back">
-   <%= content_tag :p, "Answer: #{@cardDisplay[1].answer}", class: "" %>
-  </div> 
-</div>
-  <button class="next">Next</button>
-<% end %>
+<%= render "cards/flip_card", cardDisplay: @cardDisplay %>
+
+
+
+
+

@@ -20,9 +20,29 @@ class HomeController < ApplicationController
     end
     #questions
     @question = Question.new
+    #load a set of cards method
+    card_load
+    #set the counter to the first card in the array
+    @counter = 0
+    @filler = "hello"
+  end
 
-    @cardDisplay = Level.find(1).cards.limit(5).shuffle
+  #method to load a set of cards
+  def card_load
+    @cardDisplay = Level.find(1).cards.shuffle
+  end
 
-      end
+  #action to update the counter for the next and back button
+  def counter_next
+    # RuntimeError - In order to use respond_with, first you need 
+    # to declare the formats your controller responds to in the class level.:
+
+    @counter = 0
+    respond_with(@counter+=1)
+  end
+
+  def counter_back
+    respond_with(@counter-=1)
+  end
 
 end
