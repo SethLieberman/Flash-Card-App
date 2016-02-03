@@ -76,10 +76,10 @@ $(document).ready(function(){
 		$(".new-card").toggle();
 	});
 
-
 	// $("#card").flip('toggle');
 	$("#card").flip({
   		trigger: 'click'
-});
+	});
+
 // });
 });

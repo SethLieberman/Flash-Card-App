@@ -15,7 +15,6 @@
  */
 
 #card{
-	border:solid black 2px;
 	width: 300px;
 	height: 300px;
 	margin: 0 auto;
@@ -23,9 +22,15 @@
 }
 
 .front{
-	padding-top: 150px;
+	/*padding-top: 150px;*/
+	background-color: lightblue;
+	vertical-align: middle;
+	height: 300px;
 }
 
 .back{
-	padding-top: 150px;
+	/*padding-top: 150px;*/
+	background-color: lightblue;
+	vertical-align: middle;
+	height: 300px;
 }

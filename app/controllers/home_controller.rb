@@ -21,8 +21,8 @@ class HomeController < ApplicationController
     #questions
     @question = Question.new
 
-    @cardDisplay = Level.find(1).cards.limit(5).shuffle
+    @cardDisplay = Level.find(1).cards.shuffle
 
-      end
+  end
 
 end
