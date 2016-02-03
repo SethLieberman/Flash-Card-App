@@ -21,16 +21,22 @@
 	text-align: center;
 }
 
+.front div {
+	position: relative;
+  	top: 50%;
+ 	transform: translateY(-50%);
+}
+
+.back div {
+	position: relative;
+  	top: 50%;
+ 	transform: translateY(-50%);
+}
+
 .front{
-	/*padding-top: 150px;*/
 	background-color: lightblue;
-	vertical-align: middle;
-	height: 300px;
 }
 
 .back{
-	/*padding-top: 150px;*/
 	background-color: lightblue;
-	vertical-align: middle;
-	height: 300px;
 }

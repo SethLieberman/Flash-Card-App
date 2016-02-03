@@ -103,13 +103,18 @@
 <!-- FLIP CARD -->
 <% if user_signed_in? %>
 
-<div id="card"> 
-  <div class="front"> 
-    <%= content_tag :p, "Question:#{@cardDisplay[1].question}?", class: "card-questions"%>
-  </div> 
-  <div class="back">
-   <%= content_tag :p, "Answer: #{@cardDisplay[1].answer}", class: "card-answer" %>
-  </div> 
-</div>
-  <button class="next">Next</button>
+		<div id="card">
+	 
+	  		<div class="front"> 
+	  			<div>
+	    			<%= content_tag :p, "Question:#{@cardDisplay[1].question}?", class: "card-questions"%>
+	 			</div>
+	 		</div> 
+	  		<div class="back">
+	  			<div>
+	  				<%= content_tag :p, "Answer: #{@cardDisplay[1].answer}", class: "card-answer" %>
+	  			</div> 
+	  		</div> 
+		</div>
 <% end %>
+ <button class="next">Next</button>
