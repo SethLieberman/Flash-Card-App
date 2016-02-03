@@ -81,5 +81,17 @@ $(document).ready(function(){
   		trigger: 'click'
 	});
 
-// });
+
+	console.log(gon.cardDisplay[0].question);
+	console.log(gon.cardDisplay[0].answer);
+
+	$(".cardQuestion").append(gon.cardDisplay[0].question);
+	$(".cardAnswer").append(gon.cardDisplay[0].answer);
+
+
+
+
+
+
+
 });

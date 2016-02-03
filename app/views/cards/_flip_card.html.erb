@@ -2,20 +2,16 @@
 
 <div id="card"> 
   <div class="front"> 
-  	
-    <%= content_tag :p, "Question:#{@cardDisplay[@counter].question}?", class: ""%>
+  	<div>
+      <%= content_tag :p, "", class: "cardQuestion"%>
+    </div>
   </div> 
 
   <div class="back">
-   <%= content_tag :p, "Answer: #{@cardDisplay[@counter].answer}", class: "" %>
+    <div>
+      <%= content_tag :p, "", class: "cardAnswer" %>
+    </div>
   </div> 
 </div>
-
-<%= form_for @filler, remote: :true, :url => url_for(:controller => 'home', :action => 'counter_next') do |f| %>
-  <%= f.hidden_field :counter, value: @counter %>
-  <% puts "***********************************************************" %>
-  <% puts @counter %>
-  <%= f.submit :Next %>
-<% end %>
 
 <% end %>

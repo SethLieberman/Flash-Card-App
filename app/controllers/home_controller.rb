@@ -20,28 +20,18 @@ class HomeController < ApplicationController
     end
     #questions
     @question = Question.new
+
     #load a set of cards method
     card_load
-    #set the counter to the first card in the array
-    @counter = 0
-    @filler = "hello"
   end
 
   #method to load a set of cards
   def card_load
-    @cardDisplay = Level.find(1).cards.shuffle
-  end
-
-  #action to update the counter for the next and back button
-  def counter_next
-    # RuntimeError - In order to use respond_with, first you need 
-    # to declare the formats your controller responds to in the class level.:
-    @counter = 0
-    respond_with(@counter+=1)
-  end
-
-  def counter_back
-    respond_with(@counter-=1)
+    #creates an array of shuffled cards from that level
+    #using the gon gem, converts this into JSON with name cardDisplay
+    #can now access in JS file
+    #make use of gon.watch to reload var without reloading page
+    gon.cardDisplay = Level.find(1).cards.shuffle
   end
 
 end
