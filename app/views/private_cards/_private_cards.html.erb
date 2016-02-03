@@ -1,24 +1,14 @@
-<h2>All the private cards</h2>
+
 	<!-- form for creating new private card -->
-	<h2>Create New Private Card</h2>
-	<%= form_for @privateCard do |c| %>
+	<%= form_for privateCard, remote: true, html: {method: :patch}, html: {class: "c-private-cards"} do |c| %>
 		<%= c.label :Question %>
 		<%= c.text_field :question %>
 		<%= c.label :Answer %>
 		<%= c.text_field :answer %>
 		<%= c.label :Tag %>
-		<%= c.text_field :tag %>
+		<%= c.select :tag, [['HTML','HTML'],['CSS','CSS'],['JS','JS'],['RUBY','RUBY'],['RAILS', 'RAILS'],['OTHER','OTHER']] %>
 		<%= c.submit :Create %>
 	<% end %>
-
-	
-		<% privateCards.each do |card| %>
-			<!-- button and link to edit a card -->
-		<% if current_user == card.user || current_admin %>
-			<!-- form for editing private card -->
-		
-		<% end %>
-<% end %>
 
 
 

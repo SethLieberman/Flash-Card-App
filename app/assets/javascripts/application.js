@@ -19,13 +19,6 @@
 // When the page "upadates" this will allow us to delete users and cards
 $(document).ready(function(){
 // $(document).on('page:update', function(){
-	
-	// this is hiding the answer
-	$(".answer").hide();
-	// this will toggle the anwer when you click on the questions
-	$(".question").click(function(e){
-		$(".answer").toggle();
-	});
 
 	// hiding and showing edit profile form
 	$(".edit-profile").hide();
@@ -76,10 +69,24 @@ $(document).ready(function(){
 		$(".new-card").toggle();
 	});
 
-	//JS for the flipcard
+	// hiding create private card form
+	$(".c-private-cards").hide();
+	$(".create-private-cards").click(function(){
+		$(".c-private-cards").toggle();
+	});
+
+	// show private cards to user
+	$(".private-card-info").hide();
+	$(".show-private-cards-button").click(function(){
+		$(".private-card-info").toggle();
+	});
+
+	//************JS for the flipcard**************************
+
 	$("#card").flip({
   		trigger: 'click'
 	});
+
 
 	//set counter to zero intially
 	var counter = 0;

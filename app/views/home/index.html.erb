@@ -44,9 +44,12 @@
 
 	<!-- private cards only need to be shown to a user -->
 	<% if user_signed_in? %>
+	<!-- show all private cards -->
+	<button class="show-private-cards-button">See Your Private Cards</button>
+	<button class ="create-private-cards">Create Private Cards</button>
 		<!-- user's private cards. Not visible to admins -->
 		<%= content_tag :div, class: "privateCard" do %>
-		<%= render "private_cards/private_cards", privateCards: @privateCards %>
+		<%= render "private_cards/private_cards", privateCard: @privateCard %>
 		<% end %>
 		<!-- <button value="2">Display Card</button> -->
 		<%= content_tag :div, class: "privateCardSingle" do %>
@@ -95,8 +98,8 @@
 	
 <!-- only show if user is signed in -->
 <% if user_signed_in? %>
-	<%= content_tag :div, class: "quizzes" do %>
-	<%= render "profiles/edit_profile", users: @users %>
+	<%= content_tag :div, class: "profiles" do %>
+	<%= render "profiles/edit_profile", profile: @profile %>
 	<% end %>
 <% end %>
 

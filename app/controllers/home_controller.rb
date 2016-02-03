@@ -34,4 +34,8 @@ class HomeController < ApplicationController
     gon.cardDisplay = Level.find(1).cards.shuffle
   end
 
+  def find_card(tag)
+    @findPrivateCard = PrivateCard.where(tag: tag)
+  end
+
 end
