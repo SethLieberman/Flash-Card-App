@@ -40,3 +40,17 @@
 .back{
 	background-color: lightblue;
 }
+
+#profile_content{
+	border:solid black 2px;
+	text-align: center;
+}
+
+.user-buttons{
+	display: block;
+	position: relative;
+}
+
+.card-container{
+	text-align: center;
+}

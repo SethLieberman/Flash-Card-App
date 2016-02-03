@@ -1,0 +1,7 @@
+		
+
+		<% quiz.questions.each do |q| %>
+		<%= content_tag :p, "Question: #{q.question}", class: "quiz-question"%>
+		<%= content_tag :p, "Answer: #{q.answer}", class: "quiz-answer"%>
+		<button class="edit-question">Edit Question</button>
+		<% end %>

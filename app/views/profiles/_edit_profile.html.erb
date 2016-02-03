@@ -1,7 +1,7 @@
 
 
 
-	<button class="editp">Edit Profile</button>
+	
 		<%= form_for @profile, remote: true, html: {method: :patch}, html: {class: "edit-profile"} do |c| %>
 			<%= c.label :First_Name %>
 			<%= c.text_field :fname %>

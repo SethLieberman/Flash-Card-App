@@ -1,8 +1,7 @@
 <% if user_signed_in? %>
-<h1>Welcome</h1>
-<%= content_tag :p, "Username: #{current_user.profile.username}" %>
-<%= content_tag :p, "First Name: #{current_user.profile.fname}" %>
-<%= content_tag :p, "Last Name: #{current_user.profile.lname}" %>
-<%= content_tag :p, "Level: #{current_user.profile.level}" %>
-<%= content_tag :p, "Credibility: #{current_user.profile.credibility}" %>
+<h1><%="Welcome #{current_user.profile.fname.upcase}" %></h1>	
+<%= content_tag :p, "USERNAME: #{current_user.profile.username} " %>
+<%= content_tag :p, "NAME: #{current_user.profile.fname} #{current_user.profile.lname}" %>
+<%= content_tag :p, "CREDIBILITY: #{current_user.profile.credibility}" %>
+<button class="editp">Edit Profile</button>
 <% end %>
