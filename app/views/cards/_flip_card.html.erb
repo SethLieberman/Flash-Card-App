@@ -1,20 +1,24 @@
 <% if user_signed_in? %>
-
-<div id="card"> 
-  <div class="front"> 
-  	<div>
-    <%= content_tag :p, "Question:#{@cardDisplay[@counter].question}?", class: ""%>
-      <%= content_tag :p, "", class: "cardQuestion"%>
-    </div>
-  </div> 
-  
-  <div class="back">
-    <div>
-   <%= content_tag :p, "Answer:#{@cardDisplay[@counter].answer}", class: "" %>
+  <!-- whole card -->
+  <div id="card"> 
+    <!-- front of card -->
+    <div class="front"> 
+    	<div>
+        <%= content_tag :p, "", class: "cardQuestion"%>
+      </div>
+    </div> 
+  <!-- back of card -->
+    <div class="back">
+      <div>
+        <%= content_tag :p, "", class: "cardAnswer" %>
+      </div>
+    </div> 
   </div>
-      <%= content_tag :p, "", class: "cardAnswer" %>
-    </div>
-  </div> 
-</div>
+
+  <!-- navigation buttons for cards -->
+  <div class="nextPrevButtons">
+    <button class="nextButton">Next</button>
+    <button class="previousButton">Previous</button>
+  </div>
 
 <% end %>
