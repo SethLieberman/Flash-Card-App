@@ -8,7 +8,6 @@
 		<%= content_tag :p, "Question: #{q.question}", class: "quiz-question"%>
 		<%= content_tag :p, "Answer: #{q.answer}", class: "quiz-answer"%>
 		<!-- edit or destroy a question within a quiz -->
-		<button class="edit-question">Edit Question</button>
 			<%= form_for q, remote: true, html: {method: :patch}, html: {class: "edit-question-form"} do |q| %>
 			<%= q.label :Question %>
 			<%= q.text_field :question %>
@@ -18,6 +17,7 @@
 			<%= q.number_field :quiz_id %>
 			<%= q.submit :Update %>
 		<% end %>
+		<button class="edit-question">Edit Question</button>
 		<button><%= link_to "Delete Question", question_path(q), method: :delete, data: { confirm: "You sure?" }, class: "delete-element" %></button>
 	<% end %>
 	<!-- create a new question for this quiz -->

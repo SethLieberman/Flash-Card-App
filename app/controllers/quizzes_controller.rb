@@ -40,17 +40,26 @@ class QuizzesController < ApplicationController
   	end
 
   	#updating an already created quiz
-  	def update
-  		@quiz = Quiz.find(params[:id])
-  		if @quiz.update_attributes(quiz_params)
-  			flash[:notice] ="Quiz was updated"
-  			redirect_to root_path
-  		else
-  			flash[:alert] = "Something went wrong."
-  			redirect_to root_path
-  		end
-  	end
+  	# def update
+  	# 	@quiz = Quiz.find(params[:id])
+  	# 	if @quiz.update_attributes(quiz_params)
+  	# 		flash[:notice] ="Quiz was updated"
+  	# 		redirect_to root_path
+  	# 	else
+  	# 		flash[:alert] = "Something went wrong."
+  	# 		redirect_to root_path
+  	# 	end
+  	# end
 
+    def update
+    @quiz = Quiz.find(params[:id])
+    @quiz.update_attributes(private_card_params)
+    @quiz = Quiz.all
+    respond_to do |page|
+      page.js
+    end
+    end 
+    
     def destroy
     #assign @quiz to the current quiz
     @quiz = Quiz.find(params[:id])

@@ -1,5 +1,6 @@
 <% if user_signed_in? %>
   <!-- whole card -->
+  <div class="card-container">
   <div id="card"> 
     <!-- front of card -->
     <div class="front"> 
@@ -7,7 +8,7 @@
         <%= content_tag :p, "", class: "cardQuestion"%>
       </div>
     </div> 
-  <!-- back of card -->
+    <!-- back of card -->
     <div class="back">
       <div>
         <%= content_tag :p, "", class: "cardAnswer" %>
@@ -20,5 +21,5 @@
     <button class="nextButton">Next</button>
     <button class="previousButton">Previous</button>
   </div>
-
+  </div>
 <% end %>
