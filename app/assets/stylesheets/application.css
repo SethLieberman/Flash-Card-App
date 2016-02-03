@@ -15,17 +15,28 @@
  */
 
 #card{
-	border:solid black 2px;
 	width: 300px;
 	height: 300px;
 	margin: 0 auto;
 	text-align: center;
 }
 
+.front div {
+	position: relative;
+  	top: 50%;
+ 	transform: translateY(-50%);
+}
+
+.back div {
+	position: relative;
+  	top: 50%;
+ 	transform: translateY(-50%);
+}
+
 .front{
-	padding-top: 150px;
+	background-color: lightblue;
 }
 
 .back{
-	padding-top: 150px;
+	background-color: lightblue;
 }

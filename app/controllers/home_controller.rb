@@ -36,7 +36,6 @@ class HomeController < ApplicationController
   def counter_next
     # RuntimeError - In order to use respond_with, first you need 
     # to declare the formats your controller responds to in the class level.:
-
     @counter = 0
     respond_with(@counter+=1)
   end
