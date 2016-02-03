@@ -91,8 +91,18 @@ $(document).ready(function(){
 
 	//set counter to zero intially
 	var counter = 0;
+
+	//this should be grabbing the updated cardLoad var for the JS page
+	$(".loadButton").click(function(){
+		var ajax_card_display_update = $.get("home/card_load", function(data){
+			console.log(data)
+		});	
+		console.log(ajax_card_display_update);
+		});
+
+
 	//intial display upon load
-	$(".cardQuestion").html("Level: " + gon.cardDisplay[counter].level_id + "<p> Click Next to Get Started </p>");
+	$(".cardQuestion").html("Select a Level to Get Started");
 	$(".cardAnswer").html("Answers will display here");
 	//when next button clicked, increment counter by one
 	$(".nextButton").click(function(){

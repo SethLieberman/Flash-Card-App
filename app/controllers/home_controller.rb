@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+  respond_to :html, :json, :only => [:card_load]
   def index
   	#the instance vars needed to display information on the home index page
   	@cards = Card.all
@@ -21,21 +22,21 @@ class HomeController < ApplicationController
     #questions
     @question = Question.new
 
-    #load a set of cards method
-    card_load
-  end
+    params[:cardLevel] = 1 
+    
 
-  #method to load a set of cards
-  def card_load
-    #creates an array of shuffled cards from that level
-    #using the gon gem, converts this into JSON with name cardDisplay
-    #can now access in JS file
-    #make use of gon.watch to reload var without reloading page
-    gon.cardDisplay = Level.find(1).cards.shuffle
   end
 
   def find_card(tag)
     @findPrivateCard = PrivateCard.where(tag: tag)
   end
+
+  def card_load
+    #this basically says respond with this variable and go to the root_path
+    gon.cardDisplay = Level.find(params[:cardLevel]).cards.shuffle
+    puts gon.cardDisplay
+    render json: gon.cardDisplay
+  end
+
 
 end
