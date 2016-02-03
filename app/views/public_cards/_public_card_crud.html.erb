@@ -6,7 +6,7 @@
 	<%= content_tag :p, "Tag: #{card.tag}", class: "tag" %>
 	<%= content_tag :p, "Created By: #{card.user.email}", class: "user-email" %>
 	<!-- button and link to edit a card -->
-	<% if current_user == card.user || current_admin %>
+	<% if current_user == card.user_id || current_admin %>
 	<!-- only display edit button if the public card was created by the current user or is an admin -->
 	<button><%= link_to "Edit Card", edit_public_card_path(card) %></button>
 	<!-- only display delete button if the public card was created by the current user or is an admin -->

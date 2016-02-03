@@ -76,6 +76,18 @@ $(document).ready(function(){
 		$(".new-card").toggle();
 	});
 
+	// hiding create private card form
+	$(".c-private-cards").hide();
+	$(".create-private-cards").click(function(){
+		$(".c-private-cards").toggle();
+	});
+
+	// show private cards to user
+	$(".private-card-info").hide();
+	$(".show-private-cards-button").click(function(){
+		$(".private-card-info").toggle();
+	});
+
 	// $("#card").flip('toggle');
 	$("#card").flip({
   		trigger: 'click'

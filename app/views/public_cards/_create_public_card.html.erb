@@ -8,6 +8,6 @@
 	<%= c.label :Answer %>
 	<%= c.text_field :answer %>
 	<%= c.label :Tag %>
-	<%= c.text_field :tag %>
+	<%= c.select :tag, [['HTML','HTML'],['CSS','CSS'],['JS','JS'],['RUBY','RUBY'],['RAILS', 'RAILS'],['OTHER','OTHER']] %>
 	<%= c.submit :Create %>
 <% end %>

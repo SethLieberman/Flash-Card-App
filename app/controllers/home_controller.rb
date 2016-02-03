@@ -44,4 +44,8 @@ class HomeController < ApplicationController
     respond_with(@counter-=1)
   end
 
+  def find_card(tag)
+    @findPrivateCard = PrivateCard.where(tag: tag)
+  end
+
 end
