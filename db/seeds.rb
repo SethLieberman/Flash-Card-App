@@ -41,11 +41,11 @@ User.create([
 
 # fname, lname, credibility, level, username, user_id
 Profile.create([
-	{fname: "seth", lname: "helllooooo", credibility: 0, level: 1, username: "helllooooosettthhh", user_id: 1},
-	{fname: "jim", lname: "halpert", credibility: 1000, level: 1, username: "user2", user_id: 2},
-	{fname: "bob", lname: "from account", credibility: 2000, level: 2, username: "user3", user_id: 3},
-	{fname: "tom", lname: "hanks", credibility: 3000, level: 3, username: "user4", user_id: 4},
-	{fname: "tina", lname: "superuser", credibility: 9001, level: 12, username: "user5", user_id: 5}
+	{fname: "seth", lname: "helllooooo", credibility: 0, username: "helllooooosettthhh", user_id: 1},
+	{fname: "jim", lname: "halpert", credibility: 1000, username: "user2", user_id: 2},
+	{fname: "bob", lname: "from account", credibility: 2000, username: "user3", user_id: 3},
+	{fname: "tom", lname: "hanks", credibility: 3000, username: "user4", user_id: 4},
+	{fname: "tina", lname: "superuser", credibility: 9001, username: "user5", user_id: 5}
 	])
 
 PublicCard.create([
