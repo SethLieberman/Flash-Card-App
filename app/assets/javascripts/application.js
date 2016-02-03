@@ -76,22 +76,45 @@ $(document).ready(function(){
 		$(".new-card").toggle();
 	});
 
-	// $("#card").flip('toggle');
+	//JS for the flipcard
 	$("#card").flip({
   		trigger: 'click'
 	});
 
-
-	console.log(gon.cardDisplay[0].question);
-	console.log(gon.cardDisplay[0].answer);
-
-	$(".cardQuestion").append(gon.cardDisplay[0].question);
-	$(".cardAnswer").append(gon.cardDisplay[0].answer);
-
-
-
-
-
-
+	//set counter to zero intially
+	var counter = 0;
+	//intial display upon load
+	$(".cardQuestion").html("Level: " + gon.cardDisplay[counter].level_id + "<p> Click Next to Get Started </p>");
+	$(".cardAnswer").html("Answers will display here");
+	//when next button clicked, increment counter by one
+	$(".nextButton").click(function(){
+		//if length of array - 1 (the position) equals the counter, start at 0
+		//this way the cards will just rotate through again
+		if ((gon.cardDisplay.length - 1) == counter){
+			counter = 0;
+		} 
+		else {
+			counter++;
+		};
+		//this replaces the html of the selected element with 
+		//the current displayed card to the flipcard element in the DOM
+		$(".cardQuestion").html(gon.cardDisplay[counter].question);
+		$(".cardAnswer").html(gon.cardDisplay[counter].answer);
+	});
+	//when previous button clicked, subtract one from counter
+	$(".previousButton").click(function(){
+		//if counter is zero, set counter to the last index position
+		//of cardDisplay
+		if (counter == 0){
+			counter = (gon.cardDisplay.length - 1);
+		}
+		else {
+			counter--;
+		};	
+		//this replaces the html of the selected element with 
+		//the current displayed card to the flipcard element in the DOM
+		$(".cardQuestion").html(gon.cardDisplay[counter].question);
+		$(".cardAnswer").html(gon.cardDisplay[counter].answer);
+	});
 
 });
