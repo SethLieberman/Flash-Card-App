@@ -35,7 +35,7 @@ class QuizzesController < ApplicationController
 
 
 
-      @question = Question.all
+      @question = @quiz.questions
       @card = Card.all.shuffle.find() 
      
 
