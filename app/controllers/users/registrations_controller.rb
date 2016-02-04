@@ -10,6 +10,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
+    #create a default profile for the user and assign it to them
+    @profile = Profile.create(fname: "", lname: "", credibility: 0, level: 1, username: "", user_id: User.last.id)
   end
 
   # GET /resource/edit

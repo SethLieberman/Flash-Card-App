@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   #home page, and basically all site content is in this view
   root "home#index"
+  get 'home/card_jon' => 'home#card_load', as: :loaded
 
   devise_for :users, controllers: {
     sessions: 'users/sessions',

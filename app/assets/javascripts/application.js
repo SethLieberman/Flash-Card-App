@@ -17,11 +17,10 @@
 
 
 // When the page "upadates" this will allow us to delete users and cards
-	// alert(gon.all_variables);
-	// alert(gon.file);
 
 $(document).on("page:update ready", function(){
 
+	console.log(gon);
 
 
 	//************JS for the flipcard**************************
