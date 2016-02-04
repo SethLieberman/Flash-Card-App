@@ -30,21 +30,27 @@
 	  		</li>
 	 <% end %>
 			<% if user_signed_in? %> 
-				<nav class="navbar">	
-					<ul class ="nav"> 
-			  			<li>
-			  			<!-- show the logout button if anyone is logged in -->
-			  				<button><%= link_to('Logout', destroy_user_session_path, :method => :delete) %> </button>  
-			  			</li>
+				<nav>	
+					<ul> 
 			  			<li>
 			  				<button class ="create-private-cards">Create Private Cards</button>
 			  			</li>
 			  			<li>
 			  				<button class="show-private-cards-button">See Your Private Cards</button>
 			  			</li>
+			  			<li>
+			  				<button class="show-public-cards-button">Display All Public Cards</button>
+			  			</li>
+			  			<li>
+			  				<button id="editp">Edit Profile</button>
+			  			</li>
+			  			<li>
+			  			<!-- show the logout button if anyone is logged in -->
+			  				<button><%= link_to('Logout', destroy_user_session_path, :method => :delete) %> </button>  
+			  			</li>
 					</ul>
 				</nav>
-  	<button class="show-public-cards-button">Display All Public Cards</button>
+
   	<!-- public card CRUD actions -->
   	<%= content_tag :div, class: "publicCard" do %>
 	<%= render "public_cards/public_card_crud", cards: @cards %>
