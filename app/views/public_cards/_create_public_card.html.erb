@@ -1,13 +1,13 @@
-<h2>Create a new public card</h2>
+<br><h2>Create a new public card</h2>
 <p>This card will be visible to everyone!</p>
 
 <!-- for for creating a new public card -->
 <%= form_for @publicCard do |c| %>
 	<%= c.label :Question %>
-	<%= c.text_field :question %>
+	<%= c.text_field :question %><br>
 	<%= c.label :Answer %>
-	<%= c.text_field :answer %>
+	<%= c.text_field :answer %><br>
 	<%= c.label :Tag %>
-	<%= c.select :tag, [['HTML','HTML'],['CSS','CSS'],['JS','JS'],['RUBY','RUBY'],['RAILS', 'RAILS'],['OTHER','OTHER']] %>
-	<%= c.submit :Create %>
+	<%= c.select :tag, [['HTML','HTML'],['CSS','CSS'],['JS','JS'],['RUBY','RUBY'],['RAILS', 'RAILS'],['OTHER','OTHER']] %><br>
+	<%= c.submit :Create %><br>
 <% end %>

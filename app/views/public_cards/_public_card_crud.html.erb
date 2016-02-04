@@ -1,9 +1,9 @@
-<h2>All the public cards</h2>
-<% @publicCards.each do |card| %>
+<h2>All the public cards</h2><br>
+<% @publicCards.each do |card| %><br><br><br><br><br><br>
 	<!-- displays all the cards -->
 	<%= content_tag :p, "Question:#{card.question}?", class: "question"%>
 	<%= content_tag :p, "Answer: #{card.answer}", class: "answer" %>
-	<%= content_tag :p, "Tag: #{card.tag}", class: "tag" %>
+	<%= content_tag :p, "Tag: #{card.tag}", class: "tag" %><br>
 	<%= content_tag :p, "Created By: #{card.user.email}", class: "user-email" %>
 	<!-- button and link to edit a card -->
 	<% if current_user == card.user_id || current_admin %>
