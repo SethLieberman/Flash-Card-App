@@ -11,7 +11,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create 
     super
     #create a default profile for the user
-    Profile.create(fname: "", lname: "", credibility: 0, level: 0, username: "", user_id: User.last.id, avatar: File.new("app/assets/images/missing.png")
+    Profile.create(fname: "", lname: "", credibility: 0, level: 0, username: "", user_id: User.last.id, avatar: File.new("app/assets/images/missing.png"))
   end
 
   # GET /resource/edit
