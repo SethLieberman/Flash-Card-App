@@ -108,9 +108,76 @@ nav ul li {
 }
 
 nav ul a {
-	color: black;
 	text-decoration: none;
-	padding-bottom: 2.5%:;
+	display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 150px;
+  height: 30px;
+  position: relative;
+  cursor: pointer;
+  top: 0;
+  padding: 0 25.600000381469727px;
+  border: 1px solid rgb(225,225,225);
+  font: normal normal 300 15px/32px "Electrolize", Helvetica, sans-serif;
+  color: rgb(102, 102, 102);
+  text-align: center;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: -webkit-linear-gradient(0deg, rgb(243,243,243) 0, rgb(233,233,233) 100%), rgb(238, 238, 238);
+  background: -moz-linear-gradient(90deg, rgb(243,243,243) 0, rgb(233,233,233) 100%), rgb(238, 238, 238);
+  background: linear-gradient(90deg, rgb(243,243,243) 0, rgb(233,233,233) 100%), rgb(238, 238, 238);
+  -webkit-background-origin: padding-box;
+  background-origin: padding-box;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-background-size: auto auto;
+  background-size: auto auto;
+  -webkit-box-shadow: 0 1px 0 0 rgba(255,255,255,0.298039) inset, 0 -1px 1px 0 rgba(255,255,255,0.14902) inset, 0 7px 0 0 rgb(187,187,187) , 0 8px 3px 0 rgba(0,0,0,0.2) ;
+  box-shadow: 0 1px 0 0 rgba(255,255,255,0.298039) inset, 0 -1px 1px 0 rgba(255,255,255,0.14902) inset, 0 7px 0 0 rgb(187,187,187) , 0 8px 3px 0 rgba(0,0,0,0.2) ;
+  -webkit-transition: all 0.1s cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  -moz-transition: all 0.1s cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  -o-transition: all 0.1s cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  transition: all 0.1s cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  outline: 0;
+  margin: 2.5%;
+}
+
+nav ul a:hover {
+	color: rgba(135,135,135,1);
+  background: -webkit-linear-gradient(-90deg, rgb(255,255,255) 0, rgb(235,235,235) 100%), -webkit-linear-gradient(0deg, rgb(243,243,243) 0, rgb(233,233,233) 100%), rgb(238, 238, 238);
+  background: -moz-linear-gradient(180deg, rgb(255,255,255) 0, rgb(235,235,235) 100%), -moz-linear-gradient(90deg, rgb(243,243,243) 0, rgb(233,233,233) 100%), rgb(238, 238, 238);
+  background: linear-gradient(180deg, rgb(255,255,255) 0, rgb(235,235,235) 100%), linear-gradient(90deg, rgb(243,243,243) 0, rgb(233,233,233) 100%), rgb(238, 238, 238);
+  -webkit-background-origin: padding-box;
+  background-origin: padding-box;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-background-size: auto auto;
+  background-size: auto auto;
+	outline: 0;
+}
+
+nav ul a:active {
+	top: 6px;
+  color: rgba(160,160,160,1);
+  background: -webkit-linear-gradient(-90deg, rgb(255,255,255) 0, rgb(235,235,235) 100%), rgb(255, 255, 255);
+  background: -moz-linear-gradient(180deg, rgb(255,255,255) 0, rgb(235,235,235) 100%), rgb(255, 255, 255);
+  background: linear-gradient(180deg, rgb(255,255,255) 0, rgb(235,235,235) 100%), rgb(255, 255, 255);
+  -webkit-background-origin: padding-box;
+  background-origin: padding-box;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-background-size: auto auto;
+  background-size: auto auto;
+  -webkit-box-shadow: 0 1px 0 0 rgba(255,255,255,0.298039) inset, 0 -1px 1px 0 rgba(255,255,255,0.14902) inset;
+  box-shadow: 0 1px 0 0 rgba(255,255,255,0.298039) inset, 0 -1px 1px 0 rgba(255,255,255,0.14902) inset;
+  -webkit-transition: all 50ms cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  -moz-transition: all 50ms cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  -o-transition: all 50ms cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  transition: all 50ms cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  text-decoration: none;
+  outline: 0;
 }
 
 nav button {
@@ -262,33 +329,45 @@ nav button:active {
 
 .publicCard {
 	text-align: center;
-	margin-top: 5%;
   	border: 1px solid #F0A4A4;
   	width: 25%;
-  	position: fixed;
+    position: fixed;
+    max-height: 100%;
+    background-color: #FFFFFF;
+    overflow-y: auto;
 }
 
-.c-private-cards {
+#new_private_card {
 	text-align: center;
-	margin-top: 5%;
   	border: 1px solid #F0A4A4;
   	width: 25%;
-  	position: fixed;
+    position: fixed;
+    max-height: 100%;
+    background-color: #FFFFFF;
+    overflow-y: auto;
 }
 
 #edit-profile {
 	text-align: center;
   	border: 1px solid #F0A4A4;
   	width: 25%;
-  	position: fixed;
+    position: fixed;
+    max-height: 100%;
+    background-color: #FFFFFF;
+    overflow-y: auto;
+    /*margin-top: -40px;*/
+    top: 130px;
 }
 
 .private-card-info {
 	text-align: center;
   	border: 1px solid #F0A4A4;
   	width: 25%;
-  	position: fixed;
-  }
+    position: fixed;
+    max-height: 100%;
+    background-color: #FFFFFF;
+    overflow-y: auto;
+}
 
 
 
