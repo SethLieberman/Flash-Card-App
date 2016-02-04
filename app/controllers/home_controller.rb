@@ -24,7 +24,6 @@ class HomeController < ApplicationController
 
     params[:cardLevel] = 1 
     
-
   end
 
   def find_card(tag)
@@ -33,9 +32,9 @@ class HomeController < ApplicationController
 
   def card_load
     #this basically says respond with this variable and go to the root_path
-    gon.cardDisplay = Level.find(params[:cardLevel]).cards.shuffle
+    gon.cardDisplay = Level.find(1).cards.shuffle
     puts gon.cardDisplay
-    render json: gon.cardDisplay
+    render json: gon.cardDisplay = Level.find(1).cards.shuffle
   end
 
 
