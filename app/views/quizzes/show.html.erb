@@ -1,4 +1,5 @@
 
+
 <% @questions.each do |question| %>
 
 <br>
@@ -19,9 +20,6 @@
 <div><%= radio_button_tag(:Random_Answers, "answer") %>
 <label for="answer"><%= "Random Answers:#{@cards.pop.answer}" %></label>
 
-
-<br>
-<br>
 
    <% end %>
 
