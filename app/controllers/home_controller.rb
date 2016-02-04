@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  respond_to :html, :json, :only => [:card_load]
+  # respond_to :html, :json, :only => [:card_load]
   def index
   	#the instance vars needed to display information on the home index page
   	@cards = Card.all
@@ -32,14 +32,26 @@ class HomeController < ApplicationController
 
   def card_load
     #this basically says respond with this variable and go to the root_path
-    gon.watch.cardDisplay = Level.find(params[:cardLevel]).cards.shuffle
-    @cards= Level.find(params[:cardLevel]).cards.shuffle
-    gon.richard = 100
-    @wobble = "hello"
+    User.all
+        puts "*((*(*(*(**(**("
+
+    gon.file = "Hello"
+    gon.push({
+      :user_id => 1,
+      :user_role => "admin"
+      })
+
+    puts "*((*(*(*(**(**((**(* GON: #{gon.all_variables}"
+
+    # Level.find(params[:cardLevel]).cards.shuffle
+    # @cards= Level.find(params[:cardLevel]).cards.shuffle
+    # gon.richard = 100
+    # @wobble = "hello"
     # puts gon.watch.cardDisplay
     # render json: gon.cardDisplay
 
     # @my_ajax_var = {some: 'info'}.to_json
+    # redirect_to root_path
   end
 
 

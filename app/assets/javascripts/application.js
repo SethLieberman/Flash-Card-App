@@ -17,9 +17,11 @@
 
 
 // When the page "upadates" this will allow us to delete users and cards
-
+	// alert(gon.all_variables);
+	// alert(gon.file);
 
 $(document).on("page:update ready", function(){
+
 
 
 	//************JS for the flipcard**************************
@@ -42,21 +44,21 @@ $(document).on("page:update ready", function(){
 	//when next button clicked, increment counter by one
 	$(".nextButton").click(function(){
 		console.log(gon.richard)
-		consol.log(gon.watch.cardDisplay)
+		console.log(gon.watch.cardDisplay)
 		//if length of array - 1 (the position) equals the counter, start at 0
 		//this way the cards will just rotate through again
 
 		//add logic only goes if there is something in cardDisplay to avoid errors
-		if ((gon.cardDisplay.length - 1) == counter){
-			counter = 0;
-		} 
-		else {
-			counter++;
-		};
-		//this replaces the html of the selected element with 
-		//the current displayed card to the flipcard element in the DOM
-		$(".cardQuestion").html(gon.cardDisplay[counter].question);
-		$(".cardAnswer").html(gon.cardDisplay[counter].answer);
+		// if ((gon.cardDisplay.length - 1) == counter){
+		// 	counter = 0;
+		// } 
+		// else {
+		// 	counter++;
+		// };
+		// //this replaces the html of the selected element with 
+		// //the current displayed card to the flipcard element in the DOM
+		// $(".cardQuestion").html(gon.cardDisplay[counter].question);
+		// $(".cardAnswer").html(gon.cardDisplay[counter].answer);
 	});
 	//when previous button clicked, subtract one from counter
 	$(".previousButton").click(function(){

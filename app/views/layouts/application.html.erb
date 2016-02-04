@@ -4,8 +4,7 @@
   <title>NYCDA Quiz App</title>
   <!-- include the gon gem, keep at top to prevent waiting for DOM to load and then loading vars -->
   <%= Gon::Base.render_data %>
-  <%= include_gon(watch: true) %>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<script src="https://cdn.rawgit.com/nnattawat/flip/v1.0.19/dist/jquery.flip.min.js"></script>
