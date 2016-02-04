@@ -34,7 +34,6 @@ class QuizzesController < ApplicationController
   		@quiz = Quiz.find(params[:id])
 
 
-
       @questions = @quiz.questions
       @cards = Card.all.limit(@quiz.questions.count*3).shuffle
      

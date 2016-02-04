@@ -1,9 +1,11 @@
+
+
 <% @questions.each do |question| %>
+
 <br>
 <br>
 <br>
-<ol>
-	<li>
+
 		<%= content_tag :h1, "Question:#{question.question}?", class: ""%>
 	</li>
 </ol>
@@ -19,7 +21,6 @@
 <label for="answer"><%= "Random Answers:#{@cards.pop.answer}" %></label>
 
 
-<br>
-<br>
-    <% end %>
+   <% end %>
+
 <%= submit_tag "Submit Quiz" %>
