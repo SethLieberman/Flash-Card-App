@@ -28,9 +28,15 @@ gem 'devise'
 
 #using better errors
 gem 'better_errors'
+
+#for user avatars
+gem 'paperclip'
 	
 #for parsing ruby data into JS
 gem 'gon', '~> 6.0', '>= 6.0.1'
+
+#for allowing mutlipart file uploads with uJS
+gem 'remotipart'
 
 #if you want to install graphviz and have pdf of entity relationships diagram
 # gem 'rails-erd'

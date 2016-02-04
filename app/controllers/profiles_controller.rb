@@ -76,6 +76,6 @@ class ProfilesController < ApplicationController
 
   #require the params of card and permit both question and answer to be written in DB
   def profile_params 
-    params.require(:profile).permit(:fname, :lname, :user_id, :credibility, :level, :username, :user_id)
+    params.require(:profile).permit(:fname, :lname, :user_id, :credibility, :level, :username, :user_id, :avatar)
   end
 end
