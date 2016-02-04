@@ -1,13 +1,25 @@
 <% @question.each do |question| %>
 <% @card.each do |card| %>
-<%= content_tag :p, "Question:#{question.question}?", class: ""%>
-<%= content_tag :p, "answer:#{question.answer}", class: ""%>
-<%= content_tag :p, "Random Answers:#{card.answer}", class: ""%>
-<%= content_tag :p, "Random Answers:#{card.answer}", class: ""%>
-<%= content_tag :p, "Random Answers:#{card.answer}", class: ""%>
 <br>
 <br>
+<br>
+<ol>
+	<li>
+		<%= content_tag :p, "Question:#{question.question}?", class: ""%>
+	</li>
+</ol>
+<%= radio_button_tag(:Random_Answers, "answer") %>
+<label for="answer"><%= "answer:#{question.answer}" %></label>
+<div><%= radio_button_tag(:Random_Answers, "answer") %>
+<label for="answer"><%= "Random Answers:#{card.answer}" %></label>
+<div><%= radio_button_tag(:Random_Answers, "answer") %>
+<label for="answer"><%= "Random Answers:#{card.answer}" %></label>
+<div><%= radio_button_tag(:Random_Answers, "answer") %>
+<label for="answer"><%= "Random Answers:#{card.answer}" %></label>
+
+
 <br>
 <br>
 <% end %>
 <% end %>
+<%= submit_tag "Submit Quiz" %>
