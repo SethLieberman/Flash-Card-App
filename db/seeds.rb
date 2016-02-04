@@ -65,15 +65,15 @@ Level.create([
 
 Question.create([
 	{question:"What does AJAX stand for?", answer:"Asynchronous JavaScript as XML", quiz_id: 1},
-	{question:"What does AJAX stand for?", answer:"Asynchronous JavaScript as XML", quiz_id: 1},
-	{question:"What does AJAX stand for?", answer:"Asynchronous JavaScript as XML", quiz_id: 1},
-	{question:"What does AJAX stand for?", answer:"Asynchronous JavaScript as XML", quiz_id: 2},
-	{question:"What does AJAX stand for?", answer:"Asynchronous JavaScript as XML", quiz_id: 2},
-	{question:"What does AJAX stand for?", answer:"Asynchronous JavaScript as XML", quiz_id: 2},
-	{question:"What does AJAX stand for?", answer:"Asynchronous JavaScript as XML", quiz_id: 3},
-	{question:"What does AJAX stand for?", answer:"Asynchronous JavaScript as XML", quiz_id: 3},
-	{question:"What does AJAX stand for?", answer:"Asynchronous JavaScript as XML", quiz_id: 3},
-	{question:"What does AJAX stand for?", answer:"Asynchronous JavaScript as XML", quiz_id: 4},
+	{question:"Quiz Questions 2?", answer:"Answer for quiz questions 2", quiz_id: 1},
+	{question:"Quiz Questions 3?", answer:"Answer for quiz question 3", quiz_id: 1},
+	{question:"Quiz Questions 4?", answer:"Answer for quiz question 4", quiz_id: 2},
+	{question:"Quiz Questions 5?", answer:"Answer for quiz question 5", quiz_id: 2},
+	{question:"Quiz Questions 6?", answer:"Answer for quiz question 6", quiz_id: 2},
+	{question:"Quiz Questions 7?", answer:"Answer for quiz question 7", quiz_id: 3},
+	{question:"Quiz Questions 8?", answer:"Answer for quiz question 8", quiz_id: 3},
+	{question:"Quiz Questions 9?", answer:"Answer for quiz question 9", quiz_id: 3},
+	{question:"Quiz Questions 10?", answer:"Answer for quiz question 10", quiz_id: 4},
 	{question:"What does AJAX stand for?", answer:"Asynchronous JavaScript as XML", quiz_id: 4},
 	{question:"What does AJAX stand for?", answer:"Asynchronous JavaScript as XML", quiz_id: 4}
 	])
