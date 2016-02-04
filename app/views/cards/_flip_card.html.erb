@@ -24,7 +24,7 @@
 
   <div class="loadButton">
     <!-- form for selecting a new deck of cards from a level -->
-    <%= form_tag(card_load_path, method: 'post', remote: true ) do %>  
+    <%= form_tag(card_load_path, method: 'post', remote: :true) do %>  
     <%= label_tag("Select_Level") %>
     <%= select_tag(:cardLevel, options_for_select([['One', 1],['Two', 2],['Three', 3],['Four', 4],['Five', 5],['Six', 6],['Seven', 7],['Eight', 8],['Nine', 9],['Ten', 10],['Eleven', 11],['Tweleve', 12]], selected: :option)) %>
     <%= submit_tag("Load") %>
