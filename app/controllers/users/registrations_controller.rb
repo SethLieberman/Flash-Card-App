@@ -8,8 +8,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # POST /resource
-  def create
+  def create 
     super
+    #create a default profile for the user
+    Profile.create(fname: "", lname: "", credibility: 0, level: 0, username: "", user_id: User.last.id)
   end
 
   # GET /resource/edit
