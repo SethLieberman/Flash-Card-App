@@ -2,13 +2,14 @@
 
 
 	
-		<%= form_for @profile, remote: true, html: {method: :patch}, html: {id: "edit-profile"} do |c| %>
+		<%= form_for @profile, remote: true, html: {method: :patch}, html: {id: "edit-profile"}, html: { multipart: true } do |c| %>
 			<%= c.label :First_Name %>
 			<%= c.text_field :fname %>
 			<%= c.label :Last_Name %>
 			<%= c.text_field :lname %>
 			<%= c.label :Username %>
 			<%= c.text_field :username %>
+			<%= c.file_field :avatar %>
 			<%= c.submit :Edit %>
 		<% end %>
 	
