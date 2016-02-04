@@ -1,0 +1,13 @@
+<% @question.each do |question| %>
+<% @card.each do |card| %>
+<%= content_tag :p, "Question:#{question.question}?", class: ""%>
+<%= content_tag :p, "answer:#{question.answer}", class: ""%>
+<%= content_tag :p, "Random Answers:#{card.answer}", class: ""%>
+<%= content_tag :p, "Random Answers:#{card.answer}", class: ""%>
+<%= content_tag :p, "Random Answers:#{card.answer}", class: ""%>
+<br>
+<br>
+<br>
+<br>
+<% end %>
+<% end %>
