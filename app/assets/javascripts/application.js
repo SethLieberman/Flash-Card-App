@@ -18,69 +18,9 @@
 
 // When the page "upadates" this will allow us to delete users and cards
 
+
 $(document).ready(function(){
-// $(document).on('page:update', function(){
 
-	// hiding and showing edit profile form
-	$(".edit-profile").hide();
-	$(".editp").click(function(){
-		$(".edit-profile").toggle(400);
-	});
-	// hiding and showing private cards
-	$(".private-cards").hide();
-	$(".edit-private-cards").click(function(){
-		$(".private-cards").toggle(400);
-	});
-
-	//hiding and showing create quiz function
-	//hide the content to be shown initially
-	$(".create-quiz").hide();
-	// when new quiz button is clicked, toggle the hidden content
-	$("#new-quiz-button").click(function(){
-		$(".create-quiz").toggle(400);
-	});
-
-	//hiding and showing all the quizzes
-	$(".quizzes").hide();
-	$(".show-quizzes-button").click(function(){
-		$(".quizzes").toggle(400);
-	});
-
-	// hiding and showing all the cards
-	$(".cards").hide();
-	$(".show-cards-button").click(function(){
-		$(".cards").toggle(400);
-	});
-
-	//hiding and showing all the public cards
-	$(".publicCard").hide();
-	$(".show-public-cards-button").click(function(){
-		$(".publicCard").toggle(400);
-	});
-
-	//hiding and showing all the users
-	$(".users").hide();
-	$(".show-all-users").click(function(){
-		$(".users").toggle(400);
-	});
-
-	//hiding and showing card create form
-	$(".new-card").hide();
-	$(".create-new-card-button").click(function(){
-		$(".new-card").toggle(400);
-	});
-
-	// hiding create private card form
-	$(".c-private-cards").hide();
-	$(".create-private-cards").click(function(){
-		$(".c-private-cards").toggle(400);
-	});
-
-	// show private cards to user
-	$(".private-card-info").hide();
-	$(".show-private-cards-button").click(function(){
-		$(".private-card-info").toggle(400);
-	});
 
 	//************JS for the flipcard**************************
 
