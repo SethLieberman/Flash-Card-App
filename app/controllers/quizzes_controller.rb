@@ -1,7 +1,7 @@
 class QuizzesController < ApplicationController
 
 	#authenticate that user is an admin before touching any quiz actions(Devise helper)
-	before_action :authenticate_admin!
+	# before_action :authenticate_admin!
 
 	#for showing all quizzes
 	def index
@@ -32,6 +32,14 @@ class QuizzesController < ApplicationController
 	#for showing the currently selected quiz
   	def show
   		@quiz = Quiz.find(params[:id])
+      @question = Question.all
+      @card = Card.all.shuffle
+
+      # randNumMax = level.find(1).cards.length
+      # quizAnswer = randNumMax-1
+      # quizAnswer.shuffle.cards.answer
+      # question = question.find(1)
+
   	end
 
 	#editing an already created quiz
