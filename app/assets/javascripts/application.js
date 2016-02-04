@@ -19,7 +19,7 @@
 // When the page "upadates" this will allow us to delete users and cards
 
 
-$(document).ready(function(){
+$(document).on("page:update ready", function(){
 
 
 	//************JS for the flipcard**************************
@@ -29,26 +29,24 @@ $(document).ready(function(){
 	});
 
 
-	//set counter to zero intially
+	//set global counter to zero initially
 	var counter = 0;
 
 	//this should be grabbing the updated cardLoad var for the JS page
-	$(".loadButton").submit(function(){
-		var ajax_card_display_update = $.get("/home/card_load", function(data){
-			console.log(data)
-		});	
-		// console.log(ajax_card_display_update);
-		//do I want to put gon.cardDisplay in here so it returns it?
-	});
+	//on submit of .loadButton, do these actions
 
 
-	//intial display upon load
+	//initial display upon load
 	$(".cardQuestion").html("Select a Level to Get Started");
 	$(".cardAnswer").html("Answers will display here");
 	//when next button clicked, increment counter by one
 	$(".nextButton").click(function(){
+		console.log(gon.richard)
+		consol.log(gon.watch.cardDisplay)
 		//if length of array - 1 (the position) equals the counter, start at 0
 		//this way the cards will just rotate through again
+
+		//add logic only goes if there is something in cardDisplay to avoid errors
 		if ((gon.cardDisplay.length - 1) == counter){
 			counter = 0;
 		} 
@@ -65,15 +63,15 @@ $(document).ready(function(){
 		//if counter is zero, set counter to the last index position
 		//of cardDisplay
 		if (counter == 0){
-			counter = (gon.cardDisplay.length - 1);
+			counter = (cardDisplay.length - 1);
 		}
 		else {
 			counter--;
 		};	
 		//this replaces the html of the selected element with 
 		//the current displayed card to the flipcard element in the DOM
-		$(".cardQuestion").html(gon.cardDisplay[counter].question);
-		$(".cardAnswer").html(gon.cardDisplay[counter].answer);
+		$(".cardQuestion").html(cardDisplay[counter].question);
+		$(".cardAnswer").html(cardDisplay[counter].answer);
 	});
 
 });

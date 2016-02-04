@@ -32,9 +32,14 @@ class HomeController < ApplicationController
 
   def card_load
     #this basically says respond with this variable and go to the root_path
-    gon.cardDisplay = Level.find(1).cards.shuffle
-    puts gon.cardDisplay
-    render json: gon.cardDisplay = Level.find(1).cards.shuffle
+    gon.watch.cardDisplay = Level.find(params[:cardLevel]).cards.shuffle
+    @cards= Level.find(params[:cardLevel]).cards.shuffle
+    gon.richard = 100
+    @wobble = "hello"
+    # puts gon.watch.cardDisplay
+    # render json: gon.cardDisplay
+
+    # @my_ajax_var = {some: 'info'}.to_json
   end
 
 
