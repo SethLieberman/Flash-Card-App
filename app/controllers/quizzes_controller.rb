@@ -35,8 +35,9 @@ class QuizzesController < ApplicationController
 
 
 
-      @question = @quiz.questions
-      @card = Card.all.shuffle.find() 
+      @questions = @quiz.questions
+      @cards = Card.all.limit(@quiz.questions.count*3).shuffle
+
      
 
       # randNumMax = level.find(1).cards.length
