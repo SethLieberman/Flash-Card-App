@@ -1,26 +1,38 @@
 
-
 <% @questions.each do |question| %>
 
 <br>
 <br>
 <br>
 
-		<%= content_tag :h1, "Question:#{question.question}?", class: ""%>
+		<%= content_tag :h1, "Question:#{question.question}", class: ""%>
 	</li>
 </ol>
-<!-- loop from 0 to 3 for each question -->
-<!-- between each loop choose a random number between 0 and 3 and that number will be the answer where the correct question's answer will go -->
-<%= radio_button_tag(:Random_Answers, "answer") %>
-<label for="answer"><%= "answer:#{question.answer}" %></label>
-<div><%= radio_button_tag(:Random_Answers, "answer") %>
-<label for="answer"><%= "Random Answers:#{@cards.pop.answer}" %></label>
-<div><%= radio_button_tag(:Random_Answers, "answer") %>
-<label for="answer"><%= "Random Answers:#{@cards.pop.answer}" %></label>
-<div><%= radio_button_tag(:Random_Answers, "answer") %>
-<label for="answer"><%= "Random Answers:#{@cards.pop.answer}" %></label>
 
 
-   <% end %>
+<!-- 4 questions all togeth  -->
+<!-- random number is generate and = X -->
+<!-- x = correct answer for the question -->
+<% x = rand(0..3) %>
+<% for i in (0..3) %>
+<!-- for i is not X then it will generate random answers from cards -->
 
+	<% if i == x %>
+		<% text = question.answer%>
+	<% else %>
+		<% text = @cards.pop.answer%>
+	<% end %>
+<!-- this is adding the radio buttons to the tag -->
+	<%= radio_button_tag(:Random_Answers, "answer") %>
+	<label for="answer"><%= "answer:#{text}" %></label>
+	<br>
+	<br>
+<% end %>
+
+	
+
+
+<% end %>
+<br>
+<br>
 <%= submit_tag "Submit Quiz" %>
