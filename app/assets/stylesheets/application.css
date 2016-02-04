@@ -18,6 +18,54 @@
 	padding: 0;
 }
 
+/*style for devise log in and sign up pages*/
+
+/*these are the text field boxes*/
+.field {
+  margin-left: 40%;
+}
+
+/*these are the buttons*/
+.actions {
+  margin-left: 40%
+}
+
+/*these are the links*/
+.deviseLink {
+  margin-left: 40%;
+}
+
+/*the titles or top page text*/
+.deviseTitle {
+  margin-left: 40%;
+}
+
+/*the links to log in on the root page before login*/
+
+.userLogIn, .adminLogIn {
+  font: normal normal 300 45px "Electrolize", Helvetica, sans-serif;
+  margin-top: 60px;
+  text-align: center;
+}
+.userLogIn a, .adminLogIn a {
+  text-decoration: none;
+  background-color: blue;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/*the landing page title in home index view*/
+.landingTitle {
+  text-align: center;
+}
+
+.landingTitle h1 {
+  margin: 0 auto;
+  color: red;
+  font: normal normal 400 40px/64px "Electrolize", Helvetica, sans-serif;
+}
+
 /*style for flash messaging*/
 
 .flashNotice {

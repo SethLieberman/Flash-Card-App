@@ -11,12 +11,19 @@
 
 <!-- Log in button hidden if user signed in -->
 <% unless user_signed_in? || admin_signed_in? %>
-<a href="login">Log In User</a>
+<div class="landingTitle">
+	<h1>Welcome to NYCDA Flash Card App!</h1>
+</div>
+<div class="userLogIn">
+	<a href="login">Log In</a>
+</div>
 <% end %>
 
 <!-- Log in button hidden if admin is signed in -->
 <% unless admin_signed_in? || user_signed_in?  %>
-<a href="login_admin">Log in Admin</a>
+<div class="adminLogIn">
+	<a href="login_admin">Log in as Admin</a>
+</div>
 <% end %>
 
 <!-- below here visible to both user and admin -->
