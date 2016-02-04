@@ -32,8 +32,12 @@ class QuizzesController < ApplicationController
 	#for showing the currently selected quiz
   	def show
   		@quiz = Quiz.find(params[:id])
+
+
+
       @question = Question.all
-      @card = Card.all.shuffle
+      @card = Card.all.shuffle.find() 
+     
 
       # randNumMax = level.find(1).cards.length
       # quizAnswer = randNumMax-1
