@@ -18,6 +18,28 @@
 	padding: 0;
 }
 
+/*style for flash messaging*/
+
+.flashNotice {
+  display: none;
+  z-index: 9999;
+  left: 40%;
+  top: 20%;
+  position: absolute;
+  border-radius: 8px;
+  background-color: rgba(67, 85, 156, 0.7);
+  height: 150px;
+  width: 300px;
+  font-size: 1em;
+}
+
+.flashNotice p {
+  padding-top: 15px;
+  text-align: center;
+  font-size: 3em;
+  color: rgb(255, 255, 255);
+}
+
 #card {
 	width: 500px;
 	height: 300px;

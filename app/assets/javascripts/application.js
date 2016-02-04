@@ -19,6 +19,14 @@
 
 // When the page "upadates" this will allow us to delete users and cards
 
+//this is to make the flash messaging fade in and out
+$(function(){
+  if ($(".flashNotice") != "") {
+    $(".flashNotice").fadeIn(200);
+    $(".flashNotice").delay(3000);
+    $(".flashNotice").fadeOut(200);
+  };
+});
 
 $(document).on("page:update ready", function(){
 
