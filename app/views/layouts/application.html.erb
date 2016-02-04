@@ -12,8 +12,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<%= flash[:notice] if flash[:notice] %>
-	<%= flash[:alert] if flash{:alert} %>
+  <!-- for flash messageing. Divs only appear if there are flash messages -->
+  <!-- otherwise they constantly appear if they were wrapped in their own divs -->
+  <% if flash[:notice] -%>
+    <div class="flashNotice"><p><%= flash[:notice] %><p></div>
+  <% end %>
+  <% if flash[:alert] -%>
+    <div class="flashNotice"><p><%= flash[:alert] %><p></div>
+  <% end %>
+
 <%= yield %>
 
 </body>
