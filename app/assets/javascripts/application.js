@@ -17,6 +17,7 @@
 //= require_tree .
 
 
+
 //this is to make the flash messaging fade in and out
 $(function(){
   if ($(".flashNotice") != "") {
@@ -29,9 +30,13 @@ $(function(){
 	// alert(gon.all_variables);
 	// alert(gon.file);
 
+// When the page "upadates" this will allow us to delete users and cards
+
+
 
 $(document).on("page:update ready", function(){
 
+	console.log(gon);
 
 
 	//************JS for the flipcard**************************
