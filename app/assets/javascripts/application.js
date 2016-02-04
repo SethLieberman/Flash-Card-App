@@ -33,12 +33,13 @@ $(document).ready(function(){
 	var counter = 0;
 
 	//this should be grabbing the updated cardLoad var for the JS page
-	$(".loadButton").click(function(){
-		var ajax_card_display_update = $.get("home/card_load", function(data){
+	$(".loadButton").submit(function(){
+		var ajax_card_display_update = $.get("/home/card_load", function(data){
 			console.log(data)
 		});	
-		console.log(ajax_card_display_update);
-		});
+		// console.log(ajax_card_display_update);
+		//do I want to put gon.cardDisplay in here so it returns it?
+	});
 
 
 	//intial display upon load
