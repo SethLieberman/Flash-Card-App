@@ -57,20 +57,21 @@ PublicCard.create([
 
 
 Level.create([
-	{card_id: 1, quiz_id: 1},
-	{card_id: 2, quiz_id: 2},
-	{card_id: 3, quiz_id: 3},
-	{card_id: 4, quiz_id: 4}
+	{quiz_id: 1},
+	{quiz_id: 2},
+	{quiz_id: 3},
+	{quiz_id: 4},
+	{quiz_id: 5}
 	])
 
 Question.create([
 	{question:"What is a Web Server?", answer:"A computer in the cloud networked to all other computers connected to the web that holds the content to be served.", quiz_id: 1},
 	{question:"What is the Internet?", answer:"The network infrastructure that interconnects hosts with clients.", quiz_id: 1},
 	{question:"What are the parts of a Website?", answer:"HTML (content markup), CSS (layout and styling), JavaScript (client-side behavior), and Ruby, PHP, or Python (server-side behavior).", quiz_id: 1},
-	{question:"What is HTML?", answer:"Hypter Text Markup Language.", quiz_id: 2},
-	{question:"What is CSS?", answer:"Cascading Style Sheets.", quiz_id: 2},
-	{question:"What are CSS Classes?", answer:"An HTML attribute whose value is used to classify one or more elements on a page. <div class='name'> </div>", quiz_id: 2},
-	{question:"What is the Terminal?", answer:"An interface to a lower lever of your computer than the GUI. Every command must be typed in. The mouse is not used to interact with the it.", quiz_id: 3},
+	{question:"What is HTML?", answer:"Hypter Text Markup Language.", quiz_id: 1},
+	{question:"What is CSS?", answer:"Cascading Style Sheets.", quiz_id: 1},
+	{question:"What are CSS Classes?", answer:"An HTML attribute whose value is used to classify one or more elements on a page. <div class='name'> </div>", quiz_id: 1},
+	{question:"What is the Terminal?", answer:"An interface to a lower lever of your computer than the GUI. Every command must be typed in. The mouse is not used to interact with the it.", quiz_id: 1},
 	{question:"What is VIM?", answer:"A command line text editor that runs in your chosen terminal application.", quiz_id: 3},
 	{question:"What are basic JavaScript Data Types?", answer:"string, numbers, boolean and undefined.", quiz_id: 3},
 	{question:"What are Arrays?", answer:"They hold a collection of data that can be multiple data types and can be stored as a variable.", quiz_id: 4},
@@ -82,7 +83,7 @@ Quiz.create([
 	{name: "Quiz 1", level_id: 1},
 	{name: "Quiz 2", level_id: 2},
 	{name: "Quiz 3", level_id: 3},
-	{name: "Quiz 4", level_id: 4}
+	{name: "Quiz 4", level_id: 4},
 	])
 
 
