@@ -17,24 +17,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # GET /resource/edit
   def edit
     super
-    @user = User.find(params[:id])
   end
 
   # PUT /resource
   def update
     super
     @user = User.find(params[:id])
-   # #update the card with the submitted params
-   #  if @user.update(user_params)
-   #  #if succesful display message
-   #    flash[:notice] = "User was updated"
-   #    #redirect to the that card's page
-   #    redirect_to root_path
-   #  else
-   #    #if something went wrong, redirect to that card's page
-   #    flash[:alert] = "Something went wrong."
-   #    redirect_to root_path
-    # end
   end
 
   # DELETE /resource
