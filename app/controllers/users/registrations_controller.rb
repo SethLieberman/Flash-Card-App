@@ -30,7 +30,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def destroy
     super
     @user = User.find(params[:id])
-    puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
     if @user.destroy
       redirect_to root_url, notice: "User deleted."
     end

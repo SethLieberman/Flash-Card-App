@@ -37,6 +37,10 @@ $(function(){
 $(document).on("page:update ready", function(){
 
 	console.log(gon);
+	if(gon.cards != undefined){
+		$(".testing").html("<p>" + gon.cards[1].answer + "</p>");
+	};
+
 
 
 	//************JS for the flipcard**************************
