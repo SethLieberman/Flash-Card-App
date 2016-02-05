@@ -13,7 +13,9 @@ class HomeController < ApplicationController
     #this basically says respond with this variable and go to the root_path
 
 
+
     gon.cards =  Level.find(params[:cardLevel]).cards.shuffle
+
 
     puts "*((*(*(*(**(**((**(* GON: #{gon.all_variables}"
 
@@ -26,8 +28,6 @@ class HomeController < ApplicationController
 
     # @my_ajax_var = {some: 'info'}.to_json
     # redirect_to loaded_path
-
-    # puts params[:cardLevel]
 
   end
 

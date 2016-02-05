@@ -32,16 +32,12 @@ $(function(){
 
 // When the page "upadates" this will allow us to delete users and cards
 
-
-
 $(document).on("page:update ready", function(){
 
 	console.log(gon);
 	if(gon.cards != undefined){
 		$(".testing").html("<p>" + gon.cards[1].answer + "</p>");
 	};
-
-
 
 	//************JS for the flipcard**************************
 
