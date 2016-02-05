@@ -3,6 +3,8 @@ $(document).on('page:update', function(){
 	$("#editp").unbind().click(function(evt){
 		console.log("click!");
 		$("#edit-profile").toggle(400);
+		$("#profile_content").toggle(400);
+		$(".cardPlusButtons").toggle();
 	});
 
 	$(".edit-private-cards").unbind().click(function(){
@@ -23,6 +25,7 @@ $(document).on('page:update', function(){
 
 	$(".show-public-cards-button").unbind().click(function(){
 		$(".publicCard").toggle(400);
+			$(".cardPlusButtons").toggle();
 	});
 
 	$(".show-all-users").unbind().click(function(){
@@ -35,11 +38,14 @@ $(document).on('page:update', function(){
 	
 	$(".create-private-cards").unbind().click(function(){
 		$(".c-private-cards").toggle(400);
+			$(".cardPlusButtons").toggle();
+
 	});
 
 	$(".show-private-cards-button").unbind().click(function(){
 		console.log("SHOWING")
 		$(".private-card-info").toggle(400);
+			$(".cardPlusButtons").toggle();
 	});
 
 })
@@ -50,6 +56,7 @@ $(document).on('page:load page:change', function(){
 
 	// hiding and showing edit profile form
 	$("#edit-profile").hide();
+	$("#profile_content").hide();
 // })
 
 // $(document).ready(function(){
