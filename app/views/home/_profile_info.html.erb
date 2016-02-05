@@ -4,4 +4,6 @@
 <%= content_tag :p, "Name: #{current_user.profile.fname} #{current_user.profile.lname}" %>
 <%= content_tag :p, "Credibility Points: #{current_user.profile.credibility}" %>
 <%= content_tag :p, "Level: #{current_user.profile.level}" %>
-<%= image_tag current_user.profile.avatar.url(:medium) %>
+<div class="avatarPic">
+	<%= image_tag current_user.profile.avatar.url(:medium) %>
+</div>

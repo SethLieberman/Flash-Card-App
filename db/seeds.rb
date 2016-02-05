@@ -20,14 +20,14 @@ Card.create([
 	{question:"Head Section", answer:"Contains more than just the title of your document, Encloses external files (CSS, JavaScript, etc), You can also create CSS or JavaScript directly inside", level_id: 1, admin_id: 1},
 	{question:"Body Section", answer:"Contains everything that the user sees on their screen, Uses HTML tags to demarcate content like <p> and <div>", level_id: 1, admin_id: 1},
 	{question:"<a> Tag", answer:"A link tag that is used to link to other pages on the web and to other sections of the document itself, Requires an href attribute to tell the browser where to go when the link is clicked, The target attribute can be given a value of _blank to open the link in a new tab", level_id: 1, admin_id: 1},
-	{question:"What is <>", answer:"Carrot", level_id: 1, admin_id: 1},
-	{question:"What is love", answer:"baby don't hurt me", level_id: 1, admin_id: 1},
-	{question:"Hello", answer:"It's me", level_id: 1, admin_id: 1},
-	{question:"Life", answer:"42", level_id: 2, admin_id: 1},
-	{question:"Blah baljh", answer:"afawefaew", level_id: 2, admin_id: 1},
-	{question:"awhefl;a", answer:"wgna'wenglanw", level_id: 3, admin_id: 1},
-	{question:"kjabef;kjba;ewf", answer:"a;oiwefhoa", level_id: 4, admin_id: 1},
-	{question:"a;kaewf;ajk", answer:"a;oweifha'owe", level_id: 5, admin_id: 1}
+	{question:"FTP", answer:"One of the many ways to move your website to another computer (the server) that can host it with better uptime", level_id: 1, admin_id: 1},
+	{question:"GitHub", answer:"A website that hosts git repositories that allows you to easily push repos to it and then view the commits and code contained in an easy to use interface.", level_id: 1, admin_id: 1},
+	{question:"SSH", answer:"A pseudo-acronym that stands for Secure Shell. It provides a protocol for secure communication between a client (your computer) and a remote server.", level_id: 1, admin_id: 1},
+	{question:"JavaScript", answer:"A client-side scripting language that is meant to run entirely on the user's browser.", level_id: 2, admin_id: 1},
+	{question:"Arrays", answer:"They hold a collection of data that can be multiple data types. Can also be stored as variables.", level_id: 2, admin_id: 1},
+	{question:"Function", answer:"A way to encapsulate code for later use. It can take arguments, which are used as variables inside the function. It usually returns a value, which can be used later on or immediately.", level_id: 3, admin_id: 1},
+	{question:"jQuery", answer:"A self described wrtie les, do more library for JavaScript. Can be marginally slower. ", level_id: 4, admin_id: 1},
+	{question:"JavaScript Data Types", answer:"String, Number, Boolean and Undefinded.", level_id: 5, admin_id: 1}
 	])
 
 
@@ -65,18 +65,18 @@ Level.create([
 	])
 
 Question.create([
-	{question:"What does AJAX stand for?", answer:"Asynchronous JavaScript as XML", quiz_id: 1},
-	{question:"Quiz Questions 2?", answer:"Answer for quiz questions 2", quiz_id: 1},
-	{question:"Quiz Questions 3?", answer:"Answer for quiz question 3", quiz_id: 1},
-	{question:"Quiz Questions 4?", answer:"Answer for quiz question 4", quiz_id: 2},
-	{question:"Quiz Questions 5?", answer:"Answer for quiz question 5", quiz_id: 2},
-	{question:"Quiz Questions 6?", answer:"Answer for quiz question 6", quiz_id: 2},
-	{question:"Quiz Questions 7?", answer:"Answer for quiz question 7", quiz_id: 3},
-	{question:"Quiz Questions 8?", answer:"Answer for quiz question 8", quiz_id: 3},
-	{question:"Quiz Questions 9?", answer:"Answer for quiz question 9", quiz_id: 3},
-	{question:"Quiz Questions 10?", answer:"Answer for quiz question 10", quiz_id: 4},
+	{question:"What is a Web Server?", answer:"A computer in the cloud networked to all other computers connected to the web that holds the content to be served.", quiz_id: 1},
+	{question:"What is the Internet?", answer:"The network infrastructure that interconnects hosts with clients.", quiz_id: 1},
+	{question:"What are the parts of a Website?", answer:"HTML (content markup), CSS (layout and styling), JavaScript (client-side behavior), and Ruby, PHP, or Python (server-side behavior).", quiz_id: 1},
+	{question:"What is HTML?", answer:"Hypter Text Markup Language.", quiz_id: 2},
+	{question:"What is CSS?", answer:"Cascading Style Sheets.", quiz_id: 2},
+	{question:"What are CSS Classes?", answer:"An HTML attribute whose value is used to classify one or more elements on a page. <div class='name'> </div>", quiz_id: 2},
+	{question:"What is the Terminal?", answer:"An interface to a lower lever of your computer than the GUI. Every command must be typed in. The mouse is not used to interact with the it.", quiz_id: 3},
+	{question:"What is VIM?", answer:"A command line text editor that runs in your chosen terminal application.", quiz_id: 3},
+	{question:"What are basic JavaScript Data Types?", answer:"string, numbers, boolean and undefined.", quiz_id: 3},
+	{question:"What are Arrays?", answer:"They hold a collection of data that can be multiple data types and can be stored as a variable.", quiz_id: 4},
 	{question:"What does AJAX stand for?", answer:"Asynchronous JavaScript as XML", quiz_id: 4},
-	{question:"What does AJAX stand for?", answer:"Asynchronous JavaScript as XML", quiz_id: 4}
+	{question:"What is a Function?", answer:"A way to encapsulate code for later use. They can take arguments, which are used as variables inside of it. They usually return a value, which can be used later on or displayed immediately.", quiz_id: 4}
 	])
 
 Quiz.create([

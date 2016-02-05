@@ -2,12 +2,13 @@
 <%=  Gon::Base.render_data %>
 
 <% if user_signed_in? %>
-  <!-- whole card -->
+<!-- whole card -->
+<div class="cardPlusButtons">
   <div class="card-container">
-  <div id="card"> 
-    <!-- front of card -->
-    <div class="front"> 
-    	<div>
+    <div id="card"> 
+      <!-- front of card -->
+      <div class="front"> 
+       <div>
         <%= content_tag :p, "", class: "cardQuestion"%>
       </div>
     </div> 
@@ -23,6 +24,7 @@
   <div class="nextPrevButtons">
     <button class="nextButton">Next</button>
     <button class="previousButton">Previous</button>
+    <button><%= link_to('Take a Quiz', quiz_path(@quizTake))  %></button>
   </div>
 
   <div class="loadButton">
@@ -33,5 +35,6 @@
     <%= submit_tag("Load") %>
     <% end %>  
   </div>
+</div>
 
 <% end %>

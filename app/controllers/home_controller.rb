@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   # respond_to :html, :json, :only => [:card_load]
   def index
-  
+
   end
 
   def find_card(tag)

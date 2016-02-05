@@ -14,17 +14,17 @@
 <!-- Log in button hidden if user signed in -->
 <% unless user_signed_in? || admin_signed_in? %>
 <div class="landingTitle">
-	<h1>Welcome to NYCDA Flash Card App!</h1>
+	<h1><br><br><br>Welcome to NYCDA Flash Card App!</h1>
 </div>
 <div class="userLogIn">
-	<a href="login">Log In</a>
+	<a href="login">User Log In</a>
 </div>
 <% end %>
 
 <!-- Log in button hidden if admin is signed in -->
 <% unless admin_signed_in? || user_signed_in?  %>
 <div class="adminLogIn">
-	<a href="login_admin">Log in as Admin</a>
+	<a href="login_admin">Admin Log In</a>
 </div>
 <% end %>
 
@@ -42,16 +42,16 @@
 				<nav>	
 					<ul> 
 			  			<li>
-			  				<button class ="create-private-cards">Create Private Cards</button>
+			  				<button class ="create-private-cards">Create Private Card</button>
 			  			</li>
 			  			<li>
-			  				<button class="show-private-cards-button">Your Private Cards</button>
+			  				<button class="show-private-cards-button">Private Cards</button>
 			  			</li>
 			  			<li>
-			  				<button class="show-public-cards-button">All Public Cards</button>
+			  				<button class="show-public-cards-button">Public Cards</button>
 			  			</li>
 			  			<li>
-			  				<button id="editp">Edit Profile</button>
+			  				<button id="editp">Profile</button>
 			  			</li>
 			  			<li>
 			  			<!-- show the logout button if anyone is logged in -->
