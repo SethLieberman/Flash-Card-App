@@ -1,5 +1,4 @@
-
-
+<!-- profile display for the current user -->
 <h1><%="Welcome #{current_user.profile.fname.upcase}" %></h1>	
 <%= content_tag :p, "Username: #{current_user.profile.username} " %>
 <%= content_tag :p, "Name: #{current_user.profile.fname} #{current_user.profile.lname}" %>
