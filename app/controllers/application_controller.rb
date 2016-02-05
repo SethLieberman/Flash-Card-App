@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   before_action :get_variables
 
   def get_variables
-        #the instance vars needed to display information on the home index page
+    #the instance vars needed to display information on the home index page
     @cards = Card.all
     @card = Card.new
     #users
