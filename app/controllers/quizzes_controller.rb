@@ -31,19 +31,27 @@ class QuizzesController < ApplicationController
 
 	#for showing the currently selected quiz
   	def show
-  		@quiz = Quiz.find(params[:id])
-
-
+      @quiz = Quiz.find(1)
       @questions = @quiz.questions
       @cards = Card.all.limit(@quiz.questions.count*3).shuffle
-     
-
-      # randNumMax = level.find(1).cards.length
-      # quizAnswer = randNumMax-1
-      # quizAnswer.shuffle.cards.answer
-      # question = question.find(1)
 
   	end
+
+    def quiz_grade
+      puts params.inspect
+      puts "HELLOOOOOOOOOOOO SETH"
+
+      # get user input
+      # check user input vs real answer
+      # if correct add 1 to correct var
+      #else keep going 
+      #change integer to float
+      #at the end correct var/quiz.length
+      #display final quiz grade with flash message
+      # if above .8 update user profile to next level and add 100 cred points
+      #if they dont pass do nothing take them back to index page flash message "failed"
+      redirect_to root_path
+    end 
 
 	#editing an already created quiz
   	def edit
@@ -90,7 +98,7 @@ class QuizzesController < ApplicationController
 
 	#require the params of quiz
 	def quiz_params 
-    params.require(:quiz).permit(:level_id, :name)
+    # params.require(:quiz).permit(:level_id, :name)
   end
    
 end
