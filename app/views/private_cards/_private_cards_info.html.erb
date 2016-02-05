@@ -1,11 +1,11 @@
 		<!-- displays all this card's info -->
 	<%= content_tag :div, class: "private-card-info" do %>
-		<h2>All the private cards</h2>
+		<h2>Your Private Cards</h2>
 			<%= content_tag :p, "Question:#{selectedCard.question}?", class: "question"%>
 			<%= content_tag :p, "Answer: #{selectedCard.answer}", class: "answer" %>
 			<%= content_tag :p, "Tag: #{selectedCard.tag}", class: "tag" %>
 			<%= content_tag :p, "Created By: #{selectedCard.user.email}", class: "user-email" %>
 			
 			<button class ="edit-private-cards">Edit Card</button>
-			<button><%= link_to "Delete Card", private_card_path(selectedCard), method: :delete, data: { confirm: "You sure?" } %></button>
+			<button><%= link_to "Delete Card", private_card_path(selectedCard), method: :delete, data: { confirm: "You sure?" } %></button><br>
 	<% end %>

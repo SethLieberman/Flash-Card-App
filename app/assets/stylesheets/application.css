@@ -40,30 +40,111 @@
   margin-left: 40%;
 }
 
+.deviseTitle h2 {
+  font: normal normal 300 45px "Electrolize", Helvetica, sans-serif;
+}
+
+.new_user, .new_admin {
+	font: normal normal 300 12px "Electrolize", Helvetica, sans-serif;
+}
+
+.deviseLink a {
+	font: normal normal 300 10px "Electrolize", Helvetica, sans-serif;
+}
+
 /*the links to log in on the root page before login*/
 
 .userLogIn, .adminLogIn {
   font: normal normal 300 45px "Electrolize", Helvetica, sans-serif;
-  margin-top: 60px;
   text-align: center;
 }
 .userLogIn a, .adminLogIn a {
+	text-decoration: none;
+	display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 150px;
+  height: 30px;
+  position: relative;
+  cursor: pointer;
+  top: 0;
+  padding: 0 25.600000381469727px;
+  border: 1px solid rgb(225,225,225);
+  font: normal normal 300 15px/32px "Electrolize", Helvetica, sans-serif;
+  color: rgb(102, 102, 102);
+  text-align: center;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: -webkit-linear-gradient(0deg, rgb(243,243,243) 0, rgb(233,233,233) 100%), rgb(238, 238, 238);
+  background: -moz-linear-gradient(90deg, rgb(243,243,243) 0, rgb(233,233,233) 100%), rgb(238, 238, 238);
+  background: linear-gradient(90deg, rgb(243,243,243) 0, rgb(233,233,233) 100%), rgb(238, 238, 238);
+  -webkit-background-origin: padding-box;
+  background-origin: padding-box;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-background-size: auto auto;
+  background-size: auto auto;
+  -webkit-box-shadow: 0 1px 0 0 rgba(255,255,255,0.298039) inset, 0 -1px 1px 0 rgba(255,255,255,0.14902) inset, 0 7px 0 0 rgb(187,187,187) , 0 8px 3px 0 rgba(0,0,0,0.2) ;
+  box-shadow: 0 1px 0 0 rgba(255,255,255,0.298039) inset, 0 -1px 1px 0 rgba(255,255,255,0.14902) inset, 0 7px 0 0 rgb(187,187,187) , 0 8px 3px 0 rgba(0,0,0,0.2) ;
+  -webkit-transition: all 0.1s cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  -moz-transition: all 0.1s cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  -o-transition: all 0.1s cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  transition: all 0.1s cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  outline: 0;
+  margin: 2.5%;
+}
+
+.userLogIn a:hover, .adminLogIn a:hover {
+	color: rgba(135,135,135,1);
+  background: -webkit-linear-gradient(-90deg, rgb(255,255,255) 0, rgb(235,235,235) 100%), -webkit-linear-gradient(0deg, rgb(243,243,243) 0, rgb(233,233,233) 100%), rgb(238, 238, 238);
+  background: -moz-linear-gradient(180deg, rgb(255,255,255) 0, rgb(235,235,235) 100%), -moz-linear-gradient(90deg, rgb(243,243,243) 0, rgb(233,233,233) 100%), rgb(238, 238, 238);
+  background: linear-gradient(180deg, rgb(255,255,255) 0, rgb(235,235,235) 100%), linear-gradient(90deg, rgb(243,243,243) 0, rgb(233,233,233) 100%), rgb(238, 238, 238);
+  -webkit-background-origin: padding-box;
+  background-origin: padding-box;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-background-size: auto auto;
+  background-size: auto auto;
+	outline: 0;
+}
+
+.userLogIn a:active, .adminLogIn a:active {
+	top: 6px;
+  color: rgba(160,160,160,1);
+  background: -webkit-linear-gradient(-90deg, rgb(255,255,255) 0, rgb(235,235,235) 100%), rgb(255, 255, 255);
+  background: -moz-linear-gradient(180deg, rgb(255,255,255) 0, rgb(235,235,235) 100%), rgb(255, 255, 255);
+  background: linear-gradient(180deg, rgb(255,255,255) 0, rgb(235,235,235) 100%), rgb(255, 255, 255);
+  -webkit-background-origin: padding-box;
+  background-origin: padding-box;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-background-size: auto auto;
+  background-size: auto auto;
+  -webkit-box-shadow: 0 1px 0 0 rgba(255,255,255,0.298039) inset, 0 -1px 1px 0 rgba(255,255,255,0.14902) inset;
+  box-shadow: 0 1px 0 0 rgba(255,255,255,0.298039) inset, 0 -1px 1px 0 rgba(255,255,255,0.14902) inset;
+  -webkit-transition: all 50ms cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  -moz-transition: all 50ms cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  -o-transition: all 50ms cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  transition: all 50ms cubic-bezier(0.25, 0.25, 0.75, 0.75);
   text-decoration: none;
-  background-color: blue;
-  color: white;
-  padding: 20px;
-  border-radius: 10px;
+  outline: 0;
 }
 
 /*the landing page title in home index view*/
 .landingTitle {
-  text-align: center;
+	background-image: linear-gradient(180deg, white 3rem, #F0A4A4 calc(3rem), #F0A4A4 calc(3rem + 2px), transparent 1px), repeating-linear-gradient(0deg, transparent, transparent 1.5rem, #DDD 1px, #DDD calc(1.5rem + 1px));;
+	box-shadow: 1px 1px 3px rgba(0,0,0,.25);
+  	height: 14rem;
+  	width: 400px;
+	margin: auto;
+	position: relative;
 }
 
 .landingTitle h1 {
-  margin: 0 auto;
-  color: red;
-  font: normal normal 400 40px/64px "Electrolize", Helvetica, sans-serif;
+  	font-family: Papyrus,fantasy; 
+  	font-size: 20px;
+  	text-align: center
 }
 
 /*style for flash messaging*/
@@ -142,7 +223,7 @@
 }
 
 #profile_content p {
-	font: normal normal 300 15px/32px "Electrolize", Helvetica, sans-serif;
+	font: normal normal 300 20px/32px "Electrolize", Helvetica, sans-serif;
 }
 
 .user-buttons{
@@ -407,6 +488,7 @@ nav button:active {
     overflow-y: auto;
     top: 68px;
     right: 0;
+  	font: normal normal 300 15px/32px "Electrolize", Helvetica, sans-serif;
 }
 
 #edit-profile {
@@ -419,6 +501,7 @@ nav button:active {
     overflow-y: auto;
     top: 68px;
     right: 0;
+  	font: normal normal 300 15px/32px "Electrolize", Helvetica, sans-serif;
 }
 
 .flipCard {
