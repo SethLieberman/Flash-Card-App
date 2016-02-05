@@ -372,72 +372,75 @@ nav button:active {
 }
 
 .nextButton:active, .previousButton:active {
-		top: 6px;
-  color: rgba(160,160,160,1);
-  background: -webkit-linear-gradient(-90deg, rgb(255,255,255) 0, rgb(235,235,235) 100%), rgb(255, 255, 255);
-  background: -moz-linear-gradient(180deg, rgb(255,255,255) 0, rgb(235,235,235) 100%), rgb(255, 255, 255);
-  background: linear-gradient(180deg, rgb(255,255,255) 0, rgb(235,235,235) 100%), rgb(255, 255, 255);
-  -webkit-background-origin: padding-box;
-  background-origin: padding-box;
-  -webkit-background-clip: border-box;
-  background-clip: border-box;
-  -webkit-background-size: auto auto;
-  background-size: auto auto;
-  -webkit-box-shadow: 0 1px 0 0 rgba(255,255,255,0.298039) inset, 0 -1px 1px 0 rgba(255,255,255,0.14902) inset;
-  box-shadow: 0 1px 0 0 rgba(255,255,255,0.298039) inset, 0 -1px 1px 0 rgba(255,255,255,0.14902) inset;
-  -webkit-transition: all 50ms cubic-bezier(0.25, 0.25, 0.75, 0.75);
-  -moz-transition: all 50ms cubic-bezier(0.25, 0.25, 0.75, 0.75);
-  -o-transition: all 50ms cubic-bezier(0.25, 0.25, 0.75, 0.75);
-  transition: all 50ms cubic-bezier(0.25, 0.25, 0.75, 0.75);
-  text-decoration: none;
-  outline: 0;
+	top: 6px;
+	color: rgba(160,160,160,1);
+	background: -webkit-linear-gradient(left, rgb(255,255,255) 0%, rgb(235,235,235) 100%), rgb(255, 255, 255);
+	background: -o-linear-gradient(left, rgb(255,255,255) 0%, rgb(235,235,235) 100%), rgb(255, 255, 255);
+	background: linear-gradient(to right, rgb(255,255,255) 0%, rgb(235,235,235) 100%), rgb(255, 255, 255);
+	-webkit-background-origin: padding-box;
+	background-origin: padding-box;
+	-webkit-background-clip: border-box;
+	background-clip: border-box;
+	-webkit-background-size: auto auto;
+	background-size: auto auto;
+	-webkit-box-shadow: 0 1px 0 0 rgba(255,255,255,0.298039) inset, 0 -1px 1px 0 rgba(255,255,255,0.14902) inset;
+	box-shadow: 0 1px 0 0 rgba(255,255,255,0.298039) inset, 0 -1px 1px 0 rgba(255,255,255,0.14902) inset;
+	-webkit-transition: all 50ms cubic-bezier(0.25, 0.25, 0.75, 0.75);
+	-moz-transition: all 50ms cubic-bezier(0.25, 0.25, 0.75, 0.75);
+	-o-transition: all 50ms cubic-bezier(0.25, 0.25, 0.75, 0.75);
+	transition: all 50ms cubic-bezier(0.25, 0.25, 0.75, 0.75);
+	text-decoration: none;
+	outline: 0;
 }
 
 .nextPrevButtons button {
 	margin: 2.5%;
 }
 
-.publicCard {
+.publicCard, #new_private_card, .private-card-info {
 	text-align: center;
   	border: 1px solid #F0A4A4;
   	width: 25%;
-    position: fixed;
+    position: absolute;
     max-height: 100%;
     background-color: #FFFFFF;
     overflow-y: auto;
-}
-
-#new_private_card {
-	text-align: center;
-  	border: 1px solid #F0A4A4;
-  	width: 25%;
-    position: fixed;
-    max-height: 100%;
-    background-color: #FFFFFF;
-    overflow-y: auto;
+    top: 68px;
+    right: 0;
 }
 
 #edit-profile {
 	text-align: center;
   	border: 1px solid #F0A4A4;
   	width: 25%;
-    position: fixed;
+    position: absolute;
     max-height: 100%;
     background-color: #FFFFFF;
     overflow-y: auto;
-    /*margin-top: -40px;*/
-    top: 130px;
+    top: 68px;
+    right: 0;
 }
 
-.private-card-info {
+.flipCard {
+	position: absolute;
+	top: 150px;
+	margin: auto;
+	text-align: center;
+	right: 385px;
+}
+
+.private-cards {
 	text-align: center;
   	border: 1px solid #F0A4A4;
   	width: 25%;
-    position: fixed;
+    position: absolute;
     max-height: 100%;
     background-color: #FFFFFF;
     overflow-y: auto;
+    top: 75px;
+    right: 475px;
 }
+
 
 
 
