@@ -1,4 +1,4 @@
-$(document).on('page:update', function(){
+ $(document).on('page:update', function(){
 	// alert("HELOOOOO SETH")
 	$("#editp").unbind().click(function(evt){
 		console.log("click!");

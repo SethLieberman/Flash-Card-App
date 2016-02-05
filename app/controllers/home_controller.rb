@@ -17,13 +17,13 @@ class HomeController < ApplicationController
   	@quiz = Quiz.new
     # profile
     if current_user
+      x = current_user.profile.level
+      @quizTake = Quiz.find(x + 1)
       @profile = current_user.profile
     end
     #questions
     @question = Question.new
 
-    x = current_user.profile.level
-      @quizTake = Quiz.find(x + 1)
     
   end
 
