@@ -10,7 +10,7 @@ class HomeController < ApplicationController
 
   def card_load
     #this basically says respond with this variable and go to the root_path
-    @cardDeck = Level.find(params[:cardLevel]).cards.shuffle
+    @cardDeck = Level.find(1).cards.shuffle
     gon.cards = @cardDeck
     puts ""
     puts ""

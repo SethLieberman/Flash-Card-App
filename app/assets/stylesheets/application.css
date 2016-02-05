@@ -485,6 +485,9 @@ nav button:active {
   	margin-top: 25%;
 }
 
+.card-container {
+  text-align: center;
+}
 .private-cards {
 	text-align: center;
   	border: 2px solid #F0A4A4;
