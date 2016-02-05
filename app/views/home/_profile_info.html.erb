@@ -1,4 +1,4 @@
-<% if user_signed_in? %>
+
 
 <h1><%="Welcome #{current_user.profile.fname.upcase}" %></h1>	
 <%= content_tag :p, "Username: #{current_user.profile.username} " %>
@@ -6,5 +6,3 @@
 <%= content_tag :p, "Credibility Points: #{current_user.profile.credibility}" %>
 <%= content_tag :p, "Level: #{current_user.profile.level}" %>
 <%= image_tag current_user.profile.avatar.url(:medium) %>
-
-<% end %>

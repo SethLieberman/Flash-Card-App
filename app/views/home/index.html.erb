@@ -4,9 +4,11 @@
 <% end %>
 
 <!-- if user is signed in display users page -->
-<%= content_tag :div, id:"profile_content" do %>
-<%= render 'profile_info' %>
-<%end%>
+<% if user_signed_in? %>
+	<%= content_tag :div, id:"profile_content" do %>
+	<%= render 'profile_info' %>
+	<%end%>
+<% end %>
 
 
 <!-- Log in button hidden if user signed in -->
