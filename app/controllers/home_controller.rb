@@ -22,7 +22,8 @@ class HomeController < ApplicationController
     #questions
     @question = Question.new
 
-    params[:cardLevel] = 1 
+    x = current_user.profile.level
+      @quizTake = Quiz.find(x + 1)
     
   end
 

@@ -5,9 +5,7 @@
 <br>
 <br>
 
-		<%= content_tag :h1, "Question:#{question.question}", class: ""%>
-	</li>
-</ol>
+	<%= content_tag :h1, "Question:#{question.question}", class: ""%>
 
 
 <!-- 4 questions all togeth  -->
@@ -23,16 +21,19 @@
 		<% text = @cards.pop.answer%>
 	<% end %>
 <!-- this is adding the radio buttons to the tag -->
-	<%= radio_button_tag(:Random_Answers, "answer") %>
-	<label for="answer"><%= "answer:#{text}" %></label>
-	<br>
-	<br>
-<% end %>
+	<!-- should be radio button radio_button_tag -->
 
-	
-
-
-<% end %>
+	<%= check_box_tag(:Random_Answers, "answer") %>
+	<label for="answer"><%= "#{text}" %></label>
 <br>
 <br>
+<% end %>
+<% end %>
+
+<br>
+<br>
+
 <%= submit_tag "Submit Quiz" %>
+
+<br>
+<br>

@@ -31,19 +31,15 @@ class QuizzesController < ApplicationController
 
 	#for showing the currently selected quiz
   	def show
-  		@quiz = Quiz.find(params[:id])
-
-
+      @quiz = Quiz.find(1)
       @questions = @quiz.questions
       @cards = Card.all.limit(@quiz.questions.count*3).shuffle
-     
-
-      # randNumMax = level.find(1).cards.length
-      # quizAnswer = randNumMax-1
-      # quizAnswer.shuffle.cards.answer
-      # question = question.find(1)
 
   	end
+
+    def grade
+   
+    end
 
 	#editing an already created quiz
   	def edit
