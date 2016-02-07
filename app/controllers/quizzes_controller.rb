@@ -31,9 +31,9 @@ class QuizzesController < ApplicationController
 
 	#for showing the currently selected quiz
   	def show
-      @quiz = Quiz.find(1)
-      @questions = @quiz.questions
-      @cards = Card.all.limit(@quiz.questions.count*3).shuffle
+      @quizSelect = Quiz.find(1)
+      @questions = @quizSelect.questions
+      @cards = Card.all.limit(@quizSelect.questions.count*3).shuffle
 
   	end
 

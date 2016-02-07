@@ -57,11 +57,11 @@ PublicCard.create([
 
 
 Level.create([
-	{quiz_id: 1},
-	{quiz_id: 2},
-	{quiz_id: 3},
-	{quiz_id: 4},
-	{quiz_id: 5}
+	{card_id: 1, quiz_id: 1},
+	{card_id: 2, quiz_id: 2},
+	{card_id: 2, quiz_id: 3},
+	{card_id: 3, quiz_id: 4},
+	{card_id: 4, quiz_id: 5}
 	])
 
 Question.create([
