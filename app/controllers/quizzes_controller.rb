@@ -44,13 +44,30 @@ class QuizzesController < ApplicationController
       # get user input
       # check user input vs real answer
       # if correct add 1 to correct var
+      #intialize correct var to zero.
+      amtCorrect = 0
       #else keep going 
-      #change integer to float
+      #change integers to floats for division
+      amtCorrect = amtCorrect.to_f
+      quizLength = quizLength.to_f
       #at the end correct var/quiz.length
+      quizGrade = amtCorrect / quizLength
       #display final quiz grade with flash message
       # if above .8 update user profile to next level and add 100 cred points
       #if they dont pass do nothing take them back to index page flash message "failed"
-      redirect_to root_path
+      if quizGrade > 0.8
+        #use Activerecord's increment method to update profile level by 1
+        current_user.profile.increment(profile_update_level, by = 1)
+        #update the credibilty points by 100
+        current_user.profile.increment(profile_update_credibilty, by = 100)
+        #flash message with quiz grade
+        flash[:notice] = "Congrats, you passed the quiz! (#{quizGrade * 100}%"
+        flash[:notice] = "Your level and credibility were updated."
+        redirect_to root_path
+      else
+        flash[:alert] = "Sorry, you did not score above an 80%"
+        redirect_to root_path
+      end
     end 
 
 	#editing an already created quiz
@@ -99,6 +116,14 @@ class QuizzesController < ApplicationController
 	#require the params of quiz
 	def quiz_params 
     # params.require(:quiz).permit(:level_id, :name)
+  end
+  #for updating profile level
+  def profile_update_level
+    params.require(:profile).permit(:level)
+  end
+  #for updating profile credibility
+  def profile_update_credibilty
+    params.require.permit(:profile).permit(:credibility)
   end
    
 end
