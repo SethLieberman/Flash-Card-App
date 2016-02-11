@@ -29,7 +29,7 @@ $(function(){
 });
 
 
-$(document).on("page:update ready partial-load", function(){
+$(document).on("page:update partial-load", function(){
 
 //************JS for the flipcard**************************
 	
@@ -44,10 +44,10 @@ $(document).on("page:update ready partial-load", function(){
 		if(gon.cards != undefined){
 			$(".cardQuestion").html(gon.cards[0].question);
 			$(".cardAnswer").html(gon.cards[0].answer);
-			console.log("This is the .submit console.log, will display if gon defined:");
+			// console.log("This is the .submit console.log, will display if gon defined:");
 		};
 	});
-	console.log("This is the console log outside of submit for gon.cards:");
+	// console.log("This is the console log outside of submit for gon.cards:");
 	// console.log(gon.cards);
 	// this flips the card using the https://github.com/nnattawat/flip library
 	$("#card").flip({

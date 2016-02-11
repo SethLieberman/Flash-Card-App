@@ -10,7 +10,7 @@ class HomeController < ApplicationController
 
   def card_load
     #this basically says respond with this variable and go to the root_path
-    @cardDeck = Level.find(1).cards.shuffle
+    @cardDeck = Level.find(params[:cardLevel]).cards.shuffle
     gon.cards = @cardDeck
     puts ""
     puts ""
@@ -23,6 +23,13 @@ class HomeController < ApplicationController
     puts ""
     puts params[:cardLevel]
     Gon::Base.render_data
+
+    #respond with json
+    #parse data with js
+
+    # not trigging action again just rendering
+    
+
 
 
     

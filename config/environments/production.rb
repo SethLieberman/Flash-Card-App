@@ -15,7 +15,7 @@ Rails.application.configure do
   config.action_controller.perform_caching = true
 
   #for email sending. change 'yoursite' to the sitename on heroku
-  config.action_mailer.default_url_options = { :host => 'yoursite.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'protected-tor-56595.herokuapp.com' }
 
   #it's possible we may need this line if we run into this error: 
   # ActionView::Template::Error: Missing host to link to! Please provide the 
