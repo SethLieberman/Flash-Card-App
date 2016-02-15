@@ -14,22 +14,20 @@
 <!-- 4 questions all togeth  -->
 <!-- random number is generate and = X -->
 <!-- x = correct answer for the question -->
-<% x = rand(0..3) %>
-<% for i in (0..3) %>
+<% x = rand(0..2) %>
+<% for i in (0..2) %>
 <!-- for i is not X then it will generate random answers from cards -->
 
 	<% if i == x %>
-		<% text = question%>
+		<% text = question.answer%>
 
 		<% flag = true %>
 
 	<% else %>
-		<% text = @cards.pop%>
+		<% text = @cards.pop.answer%>
 		<% flag = false %>
 
 	<% end %>
-	<% byebug %>
-
 
 
 <!-- this is adding the radio buttons to the tag -->
@@ -42,8 +40,6 @@
 
 	<!-- should be radio button radio_button_tag -->
 
-	<%= check_box_tag("question-#{i}", flag) %>
-	<label for= <%="question-#{i}" %> ><%= "#{text.answer}" %></label>
 <br>
 <br>
 <% end %>
@@ -54,9 +50,5 @@
 
   <%= submit_tag("Submit Quiz") %>
 
-<% end %>
 
 
-
-<br>
-<br>
