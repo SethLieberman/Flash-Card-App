@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   #home page, and basically all site content is in this view
   root "home#index"
+  get 'home/card_jon' => 'home#card_load', as: :loaded
 
   devise_for :users, controllers: {
     sessions: 'users/sessions',
@@ -45,6 +46,7 @@ Rails.application.routes.draw do
   post :home, to: "home#card_load", as: :card_load
   get "home/card_load" => "home#card_load"
 
+  post 'quiz_grade' => "quizzes#quiz_grade", as: :quiz_grade
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -31,19 +31,44 @@ class QuizzesController < ApplicationController
 
 	#for showing the currently selected quiz
   	def show
-  		@quiz = Quiz.find(params[:id])
-
-
-      @questions = @quiz.questions
-      @cards = Card.all.limit(@quiz.questions.count*3).shuffle
-     
-
-      # randNumMax = level.find(1).cards.length
-      # quizAnswer = randNumMax-1
-      # quizAnswer.shuffle.cards.answer
-      # question = question.find(1)
+      @quizSelect = Quiz.find(1)
+      @questions = @quizSelect.questions
+      @cards = Card.all.limit(@quizSelect.questions.count*3).shuffle
 
   	end
+
+    def quiz_grade
+      puts params.inspect
+      puts "HELLOOOOOOOOOOOO SETH"
+
+      # get user input
+      # check user input vs real answer
+      # if correct add 1 to correct var
+      #intialize correct var to zero.
+      amtCorrect = 0
+      #else keep going 
+      #change integers to floats for division
+      amtCorrect = amtCorrect.to_f
+      quizLength = quizLength.to_f
+      #at the end correct var/quiz.length
+      quizGrade = amtCorrect / quizLength
+      #display final quiz grade with flash message
+      # if above .8 update user profile to next level and add 100 cred points
+      #if they dont pass do nothing take them back to index page flash message "failed"
+      if quizGrade > 0.8
+        #use Activerecord's increment method to update profile level by 1
+        current_user.profile.increment(profile_update_level, by = 1)
+        #update the credibilty points by 100
+        current_user.profile.increment(profile_update_credibilty, by = 100)
+        #flash message with quiz grade
+        flash[:notice] = "Congrats, you passed the quiz! (#{quizGrade * 100}%"
+        flash[:notice] = "Your level and credibility were updated."
+        redirect_to root_path
+      else
+        flash[:alert] = "Sorry, you did not score above an 80%"
+        redirect_to root_path
+      end
+    end 
 
 	#editing an already created quiz
   	def edit
@@ -90,7 +115,15 @@ class QuizzesController < ApplicationController
 
 	#require the params of quiz
 	def quiz_params 
-    params.require(:quiz).permit(:level_id, :name)
+    # params.require(:quiz).permit(:level_id, :name)
+  end
+  #for updating profile level
+  def profile_update_level
+    params.require(:profile).permit(:level)
+  end
+  #for updating profile credibility
+  def profile_update_credibilty
+    params.require.permit(:profile).permit(:credibility)
   end
    
 end

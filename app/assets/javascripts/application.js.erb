@@ -1,3 +1,4 @@
+
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -17,46 +18,55 @@
 //= require_tree .
 
 
-// When the page "upadates" this will allow us to delete users and cards
 
 //this is to make the flash messaging fade in and out
 $(function(){
   if ($(".flashNotice") != "") {
     $(".flashNotice").fadeIn(200);
-    $(".flashNotice").delay(3000);
+    $(".flashNotice").delay(2500);
     $(".flashNotice").fadeOut(200);
   };
 });
 
-$(document).on("page:update ready", function(){
 
+$(document).on("page:update ready partial-load", function(){
 
-	//************JS for the flipcard**************************
+//************JS for the flipcard**************************
+	
 
+	// problem: click load, only renders the first time load
+    // first time click, gon is undefined
+    // can see correct params in the terminal and gon variable
+
+	//this should be grabbing the updated cardLoad var for the JS page
+	//on submit of .loadButton, do these actions
+	$(".loadButton").submit(function(){
+		if(gon.cards != undefined){
+			$(".cardQuestion").html(gon.cards[0].question);
+			$(".cardAnswer").html(gon.cards[0].answer);
+			console.log("This is the .submit console.log, will display if gon defined:");
+		};
+	});
+	console.log("This is the console log outside of submit for gon.cards:");
+	// console.log(gon.cards);
+	// this flips the card using the https://github.com/nnattawat/flip library
 	$("#card").flip({
   		trigger: 'click'
 	});
 
-
 	//set global counter to zero initially
 	var counter = 0;
 
-	//this should be grabbing the updated cardLoad var for the JS page
-	//on submit of .loadButton, do these actions
-
-
-	//initial display upon load
-	$(".cardQuestion").html("Select a Level to Get Started");
-	$(".cardAnswer").html("Answers will display here");
+	//initial display upon load. Will only display if gon is undefined
+	if(gon.cards === undefined){
+		$(".cardQuestion").html("Select a Level to Get Started");
+		$(".cardAnswer").html("Answers will display here");
+	};
 	//when next button clicked, increment counter by one
 	$(".nextButton").click(function(){
-		console.log(gon.richard)
-		consol.log(gon.watch.cardDisplay)
 		//if length of array - 1 (the position) equals the counter, start at 0
 		//this way the cards will just rotate through again
-
-		//add logic only goes if there is something in cardDisplay to avoid errors
-		if ((gon.cardDisplay.length - 1) == counter){
+		if ((gon.cards.length - 1) == counter){
 			counter = 0;
 		} 
 		else {
@@ -64,24 +74,23 @@ $(document).on("page:update ready", function(){
 		};
 		//this replaces the html of the selected element with 
 		//the current displayed card to the flipcard element in the DOM
-		$(".cardQuestion").html(gon.cardDisplay[counter].question);
-		$(".cardAnswer").html(gon.cardDisplay[counter].answer);
+		$(".cardQuestion").html(gon.cards[counter].question);
+		$(".cardAnswer").html(gon.cards[counter].answer);
 	});
 	//when previous button clicked, subtract one from counter
 	$(".previousButton").click(function(){
 		//if counter is zero, set counter to the last index position
 		//of cardDisplay
 		if (counter == 0){
-			counter = (cardDisplay.length - 1);
+			counter = (gon.cards.length - 1);
 		}
 		else {
 			counter--;
 		};	
 		//this replaces the html of the selected element with 
 		//the current displayed card to the flipcard element in the DOM
-		$(".cardQuestion").html(cardDisplay[counter].question);
-		$(".cardAnswer").html(cardDisplay[counter].answer);
+		$(".cardQuestion").html(gon.cards[counter].question);
+		$(".cardAnswer").html(gon.cards[counter].answer);
 	});
-
 });
 
