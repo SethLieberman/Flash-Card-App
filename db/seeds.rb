@@ -41,11 +41,11 @@ User.create([
 
 # fname, lname, credibility, level, username, user_id
 Profile.create([
-	{fname: "seth", lname: "helllooooo", credibility: 0, level: 1, username: "helllooooosettthhh", user_id: 1, avatar: File.new("app/assets/images/missing.png")},
-	{fname: "jim", lname: "halpert", credibility: 400, level: 4, username: "user2", user_id: 2, avatar: File.new("app/assets/images/missing.png")},
-	{fname: "bob", lname: "from account", credibility: 500, level: 5, username: "user3", user_id: 3, avatar: File.new("app/assets/images/missing.png")},
-	{fname: "tom", lname: "hanks", credibility: 600, level: 6, username: "user4", user_id: 4, avatar: File.new("app/assets/images/missing.png")},
-	{fname: "tina", lname: "superuser", credibility: 1200, level: 12, username: "user5", user_id: 5, avatar: File.new("app/assets/images/missing.png")}
+	{fname: "seth", lname: "helllooooo", credibility: 0, level: 1, username: "helllooooosettthhh", user_id: 1, avatar: File.new("app/assets/images/missing1.png")},
+	{fname: "jim", lname: "halpert", credibility: 400, level: 4, username: "user2", user_id: 2, avatar: File.new("app/assets/images/missing1.png")},
+	{fname: "bob", lname: "from account", credibility: 500, level: 5, username: "user3", user_id: 3, avatar: File.new("app/assets/images/missing1.png")},
+	{fname: "tom", lname: "hanks", credibility: 600, level: 6, username: "user4", user_id: 4, avatar: File.new("app/assets/images/missing1.png")},
+	{fname: "tina", lname: "superuser", credibility: 1200, level: 12, username: "user5", user_id: 5, avatar: File.new("app/assets/images/missing1.png")}
 	])
 
 PublicCard.create([
